@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "A Beginner's Guide to Growing Tomatoes in your House",
+    "description": "This course is designed to introduce you to the world of agriculture. You will learn about the different types of agriculture, the importance of agriculture, and the role of agriculture in the economy.",
+    "price": 50000,
+    "students": 30,
+    "lessons": 30,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDBfMHx8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 2,
+    "title": "Introduction to Potato Farming Techniques",
+    "description": "This course is designed to introduce you to the world of agricultural economics. You will learn about the principles of economics, the role of agriculture in the economy, and the factors that affect the agricultural industry.",
+    "price": 15000,
+    "lessons": 45,
+    "students": 30,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDBfMHx8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 3,
+    "title": "Essential Techniques and Basics for Leafy Vegetable Cultivation",
+    "description": "This course is designed to introduce you to the world of agricultural engineering. You will learn about the different types of agricultural engineering, the role of agricultural engineers, and the tools and technologies used in the field.",
+    "price": 20000,
+    "lessons": 60,
+    "students": 30,
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDBfMHx8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 4,
+    "title": "Cucumber Farming: A Beginner's Guide to Growing Cucumbers ",
+    "description": "This course is designed to introduce you to the world of agricultural marketing. You will learn about the principles of marketing, the role of marketing in the agricultural industry, and the strategies used to promote agricultural products.",
+    "price": 25000,
+    "lessons": 75,
+    "students": 30,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDBfMHx8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  }
+]

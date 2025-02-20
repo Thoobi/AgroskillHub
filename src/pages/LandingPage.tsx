@@ -1,7 +1,11 @@
+import Journey from "../components/shared/Journey";
+import Courses from "../components/shared/Courses";
+
 const LandingPages = () => {
   return (
     <div>
-      <h1>Landing Page</h1>
+      <Journey />
+      <Courses />
     </div>
   );
 };
