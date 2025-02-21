@@ -1,10 +1,16 @@
+import { IoLogoFacebook } from "react-icons/io5";
+import { IoLogoInstagram } from "react-icons/io5";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoLinkedin } from "react-icons/io";
+import { FaYoutube } from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <footer className="px-16 py-20 w-full flex flex-col gap-8">
+    <footer className="px-16 py-20 w-full flex flex-col gap-8 font-jarkata">
       <div className="p-12 border-[1px] border-[#2196F3] flex gap-32 w-full">
         <div className="flex gap-11 w-full">
-          <div className="w-[130px]">Logo</div>
-          <div className="flex flex-col gap-4 w-[130px]">
+          <div className="w-[125px]">Logo</div>
+          <div className="flex flex-col gap-4 w-[125px]">
             <h4 className="text-base font-semibold">Quick Links</h4>
             <ul>
               <li className="py-2 text-sm">About Us</li>
@@ -14,7 +20,7 @@ const Footer = () => {
               <li className="py-2 text-sm">Support</li>
             </ul>
           </div>
-          <div className="flex flex-col gap-4 w-[130px]">
+          <div className="flex flex-col gap-4 w-[125px]">
             <h4 className="text-base font-semibold">Resources</h4>
             <ul>
               <li className="py-2 text-sm">Webinars</li>
@@ -24,7 +30,7 @@ const Footer = () => {
               <li className="py-2 text-sm">News</li>
             </ul>
           </div>
-          <div className="flex flex-col gap-4 w-[130px]">
+          <div className="flex flex-col gap-4 w-[125px]">
             <h4 className="text-base font-semibold">Stay connected</h4>
             <ul>
               <li className="py-2 text-sm">Follow Us</li>
@@ -60,13 +66,32 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-start w-full gap-6">
-        <div>
-          <p className="text-xs">© 2021 AgroSkill Hub. All Rights Reserved.</p>
+      <div className="flex w-full justify-between">
+        <div className="flex justify-start w-full gap-6">
+          <p className="text-sm">© 2021 AgroSkill Hub. All Rights Reserved.</p>
           <ul className="flex gap-6">
-            <li className="text-xs">Privacy Policy</li>
-            <li className="text-xs">Terms of Service</li>
-            <li className="text-xs">Cookie Settings</li>
+            <li className="text-sm underline">Privacy Policy</li>
+            <li className="text-sm underline">Terms of Service</li>
+            <li className="text-sm underline">Cookie Settings</li>
+          </ul>
+        </div>
+        <div>
+          <ul className="flex gap-3 text-2xl">
+            <li>
+              <IoLogoFacebook />
+            </li>
+            <li>
+              <IoLogoInstagram />
+            </li>
+            <li>
+              <FaXTwitter />
+            </li>
+            <li>
+              <IoLogoLinkedin />
+            </li>
+            <li>
+              <FaYoutube />
+            </li>
           </ul>
         </div>
       </div>
