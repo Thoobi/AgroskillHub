@@ -9,6 +9,7 @@ module.exports = {
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        jarkata: ["Plus Jakarta Sans", "sans-serif"],
       },
     },
   },

@@ -1,6 +1,10 @@
-import foodprod from "../../foodprod.json";
+import foodprodshort from "../../foodprodshort.json";
+import { MdOutlinePlayLesson } from "react-icons/md";
+import { RiUserVoiceLine } from "react-icons/ri";
+import { IoStar } from "react-icons/io5";
 
 interface FoodProd {
+  id: number;
   title: string;
   description: string;
   rating: number;
@@ -13,13 +17,48 @@ interface FoodProd {
 const FoodProduction = () => {
   return (
     <div className="flex flex-row gap-6 w-full">
-      {foodprod.map((item: FoodProd, index: number) => (
-        <div key={index} className="w-[302px]">
-          <h1>{item.title}</h1>
-          <p>{item.rating}</p>
-          <p>{item.price}</p>
-          <div>
-            <img src={item.image} alt="" />
+      {foodprodshort.map((item: FoodProd) => (
+        <div
+          key={item.id}
+          className="w-[302px] rounded-2xl border-[1px] border-[#F6F6F6] pb-6"
+        >
+          <div className="h-[220px] w-full rounded-t-2xl">
+            <img
+              src={item.image}
+              alt=""
+              className="w-full h-full rounded-t-2xl"
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="w-full px-6 py-4 font-jarkata flex flex-col gap-6">
+              <h1 className="text-2xl font-semibold">{item.title}</h1>
+              <div className="flex items-center justify-between">
+                <span className="flex items-center gap-2">
+                  <MdOutlinePlayLesson />
+                  <h6 className="text-sm">{item.lessons} lessons</h6>
+                </span>
+                <span className="flex items-center gap-[5px]">
+                  <RiUserVoiceLine className="text-[#2196F3] h-[15px] w-[15px]" />
+                  <h6 className="text-[10px]">{item.students}</h6>
+                </span>
+              </div>
+              <div className="w-full flex justify-between items-center">
+                <span className="text-xl font-bold text-[#1E2B33]">
+                  ₦{item.price}
+                </span>
+                <span className="flex gap-2 items-center">
+                  <IoStar />
+                  <h6 className="text-[#1E2B33] text-xl font-bold">
+                    {item.rating}
+                  </h6>
+                </span>
+              </div>
+            </div>
+            <div className="w-full px-6">
+              <button className="h-11 w-[254px] bg-buttonprimary rounded-2xl text-base font-bold text-white">
+                Enroll Now
+              </button>
+            </div>
           </div>
         </div>
       ))}

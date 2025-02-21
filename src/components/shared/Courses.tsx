@@ -1,5 +1,7 @@
 import { useState } from "react";
 import FoodProduction from "./FoodProduction";
+import { HiOutlineArrowRight } from "react-icons/hi2";
+
 const courseHeader = [
   {
     title: "Food Production",
@@ -54,6 +56,12 @@ const Courses = () => {
               )}
             </>
           ))}
+        </div>
+        <div>
+          <button className="flex items-center justify-center gap-4 bg-buttonprimary h-[72px] w-[307px] text-2xl font-bold text-white rounded-2xl">
+            View all courses
+            <HiOutlineArrowRight />
+          </button>
         </div>
       </div>
     </section>

@@ -21,6 +21,9 @@ const Journey = () => {
             <MdKeyboardArrowRight className="text-buttonprimary " />
           </Link>
         </div>
+        <div>
+          <div></div>
+        </div>
       </div>
     </section>
   );
