@@ -63,11 +63,10 @@ const Waitlist = () => {
 
   return (
     <section
-      className="max-lg:h-full h-screen bg-black text-white font-jarkata w-full max-lg:px-5 flex justify-center pt-10 max-lg:py-3"
+      className="max-lg:h-full h-screen bg-black text-white font-jarkata w-full max-lg:px-3 flex justify-center pt-10 max-lg:py-8"
       style={{
         backgroundImage: `url(${bgClog})`,
         backgroundSize: "cover",
-        // height: "100vh",
       }}
     >
       <Toaster
@@ -82,12 +81,12 @@ const Waitlist = () => {
       />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 py-5 bg-white/20 border-[2px] border-[#EDEDED] w-[800px] h-[700px] rounded-[20px] max-lg:w-full p-8 max-lg:h-full"
+        className="flex flex-col gap-4 py-5 bg-white/20 border-[2px] border-[#EDEDED] w-[800px] h-[700px] rounded-[20px] max-lg:w-full p-8 max-lg:p-4 max-lg:h-full"
       >
-        <h2 className="text-6xl font-jarkata font-bold text-center max-lg:text-4xl">
+        <h2 className="text-6xl font-jarkata font-bold text-center max-lg:text-5xl">
           Join the Waitlist
         </h2>
-        <p className="text-lg text-center font-medium">
+        <p className="text-lg text-center max-lg:text-base font-medium">
           Be the first to know when we launch
         </p>
         <div className="py-5 flex flex-col gap-2 justify-center items-center max-lg:w-full">
