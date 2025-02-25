@@ -7,7 +7,7 @@
     "students": 30,
     "lessons": 30,
     "rating": 4.5,
-    "image": "src/assets/tomato.jpg"
+    "image": "/assets/tomato.jpg"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "lessons": 45,
     "students": 30,
     "rating": 4.7,
-    "image": "src/assets/potato.jpg"
+    "image": "/assets/potato.jpg"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "lessons": 60,
     "students": 30,
     "rating": 4.9,
-    "image": "src/assets/leafy.jpg"
+    "image": "/assets/leafy.jpg"
   },
   {
     "id": 4,
@@ -37,6 +37,6 @@
     "lessons": 75,
     "students": 30,
     "rating": 4.8,
-    "image": "src/assets/cucumber.jpg"
+    "image": "/assets/cucumber.jpg"
   }
 ]
