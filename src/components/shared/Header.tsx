@@ -26,7 +26,7 @@ const Header = () => {
             Sign Up
           </button>
           <button className="border-[1px] border-buttonprimary rounded-[4px] h-[51px] max-lg:h-12 w-[194px] text-lg font-medium">
-            learn more
+            Join Waitlist
           </button>
         </div>
       </div>
