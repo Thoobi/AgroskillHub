@@ -1,4 +1,4 @@
-import smiley from "../../assets/smileygirl.jpg";
+import smiley from "/assets/smileygirl.jpg";
 
 const Words = () => {
   return (

@@ -1,4 +1,4 @@
-import jinx from "../../assets/jinx.jpg";
+import jinx from "/assets/jinx.jpg";
 
 const WordsTwo = () => {
   return (

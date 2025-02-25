@@ -1,4 +1,4 @@
-import community from "../../assets/community.jpg";
+import community from "/assets/community.jpg";
 
 const CTA = () => {
   return (

@@ -1,5 +1,5 @@
 import TestimonialCard from "./TestimonialCard";
-import profile from "../../assets/profile.svg";
+import profile from "/assets/profile.svg";
 const Testimonial = () => {
   return (
     <section className="px-16 py-28 max-lg:py-12 font-jarkata w-full max-lg:px-5">

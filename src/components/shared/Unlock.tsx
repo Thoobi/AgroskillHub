@@ -1,17 +1,17 @@
 const jargons = [
   {
-    image: "../../src/assets/Vector.svg",
+    image: "/assets/Vector.svg",
     title: "Receive Certification Upon Completion",
     description: "Earn your certificate to showcase your new skills.",
   },
   {
-    image: "../../src/assets/Vector.svg",
+    image: "/assets/Vector.svg",
     title: "Track Your Progress and Achieve Certification",
     description:
       "Stay motivated as you complete interactive quizzes and receive your certification.",
   },
   {
-    image: "../../src/assets/Vector.svg",
+    image: "/assets/Vector.svg",
     title: "Join a Community of Learners and Mentors",
     description: "Engage with peers and experts through our community forums.",
   },
