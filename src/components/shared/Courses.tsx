@@ -19,16 +19,18 @@ const courseHeader = [
 const Courses = () => {
   const [activetab, setActivetab] = useState("Food Production");
   return (
-    <section className="w-full bg-primarywhite font-roboto px-16 py-20">
+    <section className="w-full bg-primarywhite font-roboto px-16 py-20 max-lg:w-full max-lg:px-5">
       <div className="flex flex-col justify-center items-center gap-20">
         <div className="flex flex-col justify-center w-full items-center gap-4">
-          <h1 className="text-5xl/[57.6px] font-bold">Our Courses</h1>
-          <span className="text-4xl/[43.2px] font-semibold">
+          <h1 className="text-5xl/[57.6px] font-bold max-lg:text-4xl">
+            Our Courses
+          </h1>
+          <span className="text-4xl/[43.2px] font-semibold max-lg:text-4xl">
             Best selling courses
           </span>
         </div>
         <div
-          className={`flex w-[740px] h-[77px] items-center rounded-full gap-2 bg-[#EEF8FF] p-2`}
+          className={`flex max-lg:flex-col max-lg:w-[265px] max-lg:h-[200px] max-lg:px-2 w-[740px] h-[77px] items-center rounded-full max-lg:rounded-[40px] gap-2 bg-[#EEF8FF] p-2`}
         >
           {courseHeader.map((course, index) => (
             <>

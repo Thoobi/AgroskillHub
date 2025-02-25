@@ -36,17 +36,16 @@ const faqs = [
 export default function FAQ() {
   const [active, setActive] = useState(false);
   const [activeId, setActiveId] = useState();
-  const toggleAccordion2 = (id: number) => {
-    if (active && activeId === id) {
+  const toggleAccordion = (id: number) => {
+    if (activeId === id) {
+      setActiveId(id);
       setActive(false);
-    } else {
-      setActive(true);
     }
   };
   return (
-    <section className="bg-[#F6FBFF] py-20 px-16 font-roboto w-full">
-      <div className="flex gap-20">
-        <div className="flex flex-col gap-8 w-[500px]">
+    <section className="bg-[#F6FBFF] py-20 px-16 font-roboto w-full max-lg:py-16 max-lg:px-5">
+      <div className="flex gap-20 max-lg:flex-col items-start justify-start ">
+        <div className="flex flex-col gap-8 w-[500px] max-lg:w-full">
           <div className="flex gap-6 flex-col">
             <h3 className="text-5xl font-bold">FAQs</h3>
             <p className="text-lg">
@@ -54,7 +53,7 @@ export default function FAQ() {
               started.
             </p>
           </div>
-          <button className="w-[453px] h-[51px] border-[1px] border-buttonprimary rounded-2xl">
+          <button className="w-[453px] h-[51px] max-lg:w-full border-[1px] border-buttonprimary rounded-2xl">
             Contact Us
           </button>
         </div>
@@ -64,8 +63,7 @@ export default function FAQ() {
               <span
                 className="flex w-full justify-between items-center "
                 onClick={() => {
-                  toggleAccordion2(id);
-                  setActiveId(faq.id);
+                  toggleAccordion(id);
                 }}
               >
                 <h5 className="text-base font-bold">{faq.question}</h5>

@@ -16,7 +16,7 @@ interface FoodProd {
 
 const FoodProduction = () => {
   return (
-    <div className="flex flex-row gap-6 w-full">
+    <div className="flex flex-row max-lg:flex-col gap-6 w-full max-lg:px-5">
       {foodprodshort.map((item: FoodProd) => (
         <div
           key={item.id}

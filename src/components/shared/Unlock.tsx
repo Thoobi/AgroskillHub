@@ -18,15 +18,15 @@ const jargons = [
 ];
 export default function Unlock() {
   return (
-    <section className="py-[112px] px-16 bg-[#F6FBFF] font-roboto flex flex-col gap-20 w-full">
-      <div className="flex gap-20 items-center justify-center w-full">
-        <span className="w-[616px]">
+    <section className="py-[112px] max-lg:py-16 px-16 bg-[#F6FBFF] font-roboto flex flex-col gap-20 w-full max-lg:px-5">
+      <div className="flex max-lg:flex-col gap-20 max-lg:gap-5 items-center justify-center w-full">
+        <span className="w-[616px] max-lg:w-full">
           <h2 className="text-[2.49rem] text-start font-bold">
             Unlock Exciting Possibilities: Start Your Educational Adventure with
             AgroSkill Hub Now!
           </h2>
         </span>
-        <span className="w-[616px]">
+        <span className="w-[616px] max-lg:w-full">
           <p className="text-xl font-normal ">
             At AgroSkill Hub, we empower you to gain practical skills through
             our localized content. Access a wide range of courses designed to
@@ -36,7 +36,7 @@ export default function Unlock() {
           </p>
         </span>
       </div>
-      <div className="flex w-full justify-center gap-12">
+      <div className="flex w-full max-lg:flex-col justify-center gap-12">
         {jargons.map((item, index) => (
           <div key={index} className="flex flex-col gap-6">
             <div>

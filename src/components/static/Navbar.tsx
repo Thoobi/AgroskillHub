@@ -1,11 +1,11 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 const Navbar = () => {
   return (
-    <nav className="bg-primarywhite text-primaryblack flex justify-between items-center py-3 px-16 border-b border-primaryblack font-roboto">
+    <nav className="bg-primarywhite text-primaryblack flex justify-between items-center py-3 px-16 border-b border-primaryblack font-roboto max-lg:px-5">
       <div>
         <h1>Logo</h1>
       </div>
-      <div className="flex items-center gap-8 text-base">
+      <div className="flex items-center gap-8 text-base max-lg:hidden">
         <ul className="flex space-x-8">
           <li>Home</li>
           <li>Courses</li>

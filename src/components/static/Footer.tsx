@@ -6,11 +6,11 @@ import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="px-16 py-20 w-full flex flex-col gap-8 font-jarkata">
-      <div className="p-12 border-[1px] border-[#2196F3] flex gap-32 w-full">
-        <div className="flex gap-11 w-full">
+    <footer className="px-16 py-20 w-full flex flex-col gap-8 font-jarkata max-lg:px-5 max-lg:py-12">
+      <div className="p-12 border-[1px] border-[#2196F3] flex gap-32 w-full max-lg:flex-col max-lg:p-5">
+        <div className="flex gap-11 w-full max-lg:flex-col">
           <div className="w-[125px]">Logo</div>
-          <div className="flex flex-col gap-4 w-[125px]">
+          <div className="flex flex-col gap-4 w-[125px] max-lg:w-full">
             <h4 className="text-base font-semibold">Quick Links</h4>
             <ul>
               <li className="py-2 text-sm">About Us</li>
@@ -41,7 +41,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col gap-6 w-[400px]">
+        <div className="flex flex-col gap-6 w-[400px] max-lg:w-full">
           <span className="flex flex-col gap-4">
             <h4 className="text-base font-semibold">Subscribe</h4>
             <p className="text-base">
@@ -49,13 +49,13 @@ const Footer = () => {
             </p>
           </span>
           <div className="flex flex-col gap-3">
-            <span className="flex gap-4">
+            <span className="flex gap-4 max-lg:flex-col">
               <input
                 type="text"
                 placeholder="Enter your email"
-                className="focus:outline-none border-[1px] border-black h-12 w-[265px] p-3 rounded-2xl"
+                className="focus:outline-none border-[1px] border-black h-12 w-[265px] max-lg:w-full p-3 rounded-2xl"
               />
-              <button className="h-12 w-[119px] border-[1px] border-buttonprimary rounded-2xl">
+              <button className="h-12 w-[119px] max-lg:w-full border-[1px] border-buttonprimary rounded-2xl">
                 Subscribe
               </button>
             </span>
@@ -66,11 +66,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full justify-between">
-        <div className="flex justify-start w-full gap-6">
+      <div className="flex w-full justify-between max-lg:flex-col-reverse max-lg:gap-6">
+        <div className="flex justify-start w-full gap-6 max-lg:flex-col-reverse">
           <p className="text-sm">© 2021 AgroSkill Hub. All Rights Reserved.</p>
-          <ul className="flex gap-6">
-            <li className="text-sm underline">Privacy Policy</li>
+          <ul className="flex gap-6 max-lg:flex-col">
+            <li className="text-sm underline max-lg:w-full">Privacy Policy</li>
             <li className="text-sm underline">Terms of Service</li>
             <li className="text-sm underline">Cookie Settings</li>
           </ul>

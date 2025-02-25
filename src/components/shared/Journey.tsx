@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 const Journey = () => {
   return (
-    <section className="bg-primarywhite text-primaryblack font-roboto px-16">
+    <section className="bg-primarywhite text-primaryblack font-roboto px-16 max-lg:w-full max-lg:px-5">
       <div className="mt-16">
-        <div className="text-start w-[380px]">
+        <div className="text-start w-[380px] max-lg:w-full">
           <h3 className="text-start text-base">Start</h3>
           <div className="flex flex-col gap-6">
             <h1 className="text-5xl/[57.6px] font-bold ">
