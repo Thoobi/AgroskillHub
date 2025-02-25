@@ -1,13 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../static/Navbar";
 import Footer from "../static/Footer";
+import { useLocation } from "react-router-dom";
 
 const Layout = () => {
+  const location = useLocation();
+  const withoutFooter = ["/join-waitlist"];
   return (
     <div>
       <Navbar />
       <Outlet />
-      <Footer />
+      {!withoutFooter.includes(location.pathname) && <Footer />}
     </div>
   );
 };

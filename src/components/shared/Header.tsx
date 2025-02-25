@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
+  const handleJoinWaitlist = () => {
+    navigate("/join-waitlist");
+  };
+
   return (
     <header
       style={{
@@ -25,7 +31,10 @@ const Header = () => {
           <button className="bg-buttonprimary text-white rounded-[4px] h-[51px] w-[194px] max-lg:h-12 text-lg font-medium">
             Sign Up
           </button>
-          <button className="border-[1px] border-buttonprimary rounded-[4px] h-[51px] max-lg:h-12 w-[194px] text-lg font-medium">
+          <button
+            className="border-[1px] border-buttonprimary rounded-[4px] h-[51px] max-lg:h-12 w-[194px] text-lg font-medium"
+            onClick={handleJoinWaitlist}
+          >
             Join Waitlist
           </button>
         </div>
