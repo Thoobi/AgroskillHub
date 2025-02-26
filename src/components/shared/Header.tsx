@@ -22,7 +22,7 @@ const Header = () => {
           </h1>
         </div>
         <p className="text-xl w-[560px] max-lg:w-full font-normal max-lg:text-base">
-          AgroSkill Hub bridges knowledge gaps by providing engaging,
+          Mastaskillz Hub bridges knowledge gaps by providing engaging,
           multilingual educational content tailored for your community. Join us
           in transforming agriculture into a thriving career path for youth and
           women alike.
