@@ -23,12 +23,12 @@ export default function Unlock() {
         <span className="w-[616px] max-lg:w-full">
           <h2 className="text-[2.49rem] text-start font-bold">
             Unlock Exciting Possibilities: Start Your Educational Adventure with
-            AgroSkill Hub Now!
+            Mastaskillz Hub Now!
           </h2>
         </span>
         <span className="w-[616px] max-lg:w-full">
           <p className="text-xl font-normal ">
-            At AgroSkill Hub, we empower you to gain practical skills through
+            At Mastaskillz Hub, we empower you to gain practical skills through
             our localized content. Access a wide range of courses designed to
             meet your needs, regardless of your background. Join our community
             and transform your learning experience into a journey of growth and
