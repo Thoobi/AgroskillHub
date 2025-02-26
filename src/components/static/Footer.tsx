@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="p-12 border-[1px] border-[#2196F3] bg-black text-white flex gap-32 w-full max-lg:flex-col max-lg:p-5">
         <div className="flex gap-11 w-full max-lg:flex-col">
           <div className="w-[125px]">
-            <Link>
+            <Link to={"/"}>
               <img src={logo} alt="" />
             </Link>
           </div>
