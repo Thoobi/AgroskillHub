@@ -3,13 +3,19 @@ import { IoLogoInstagram } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoLinkedin } from "react-icons/io";
 import { FaYoutube } from "react-icons/fa";
+import logo from "/assets/logo.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="px-16 py-20 w-full flex flex-col gap-8 font-jarkata max-lg:px-5 max-lg:py-12">
-      <div className="p-12 border-[1px] border-[#2196F3] flex gap-32 w-full max-lg:flex-col max-lg:p-5">
+      <div className="p-12 border-[1px] border-[#2196F3] bg-black text-white flex gap-32 w-full max-lg:flex-col max-lg:p-5">
         <div className="flex gap-11 w-full max-lg:flex-col">
-          <div className="w-[125px]">Logo</div>
+          <div className="w-[125px]">
+            <Link>
+              <img src={logo} alt="" />
+            </Link>
+          </div>
           <div className="flex flex-col gap-4 w-[125px] max-lg:w-full">
             <h4 className="text-base font-semibold">Quick Links</h4>
             <ul>
