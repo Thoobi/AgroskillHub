@@ -8,10 +8,10 @@ const Journey = () => {
           <h3 className="text-start text-base">Start</h3>
           <div className="flex flex-col gap-6">
             <h1 className="text-5xl/[57.6px] font-bold ">
-              Your Journey with AgroSkill Hub Begins Here
+              Your Journey with Mastaskillz Hub Begins Here
             </h1>
             <p className="text-lg/[27px]">
-              AgroSkill Hub is designed to empower you with essential skills
+              MastaSkillz Hub is designed to empower you with essential skills
               through localized, multilingual content. Follow these simple steps
               to get started on your path to gaining practical skills.
             </p>

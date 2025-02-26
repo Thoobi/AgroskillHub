@@ -3,13 +3,13 @@ import { useState } from "react";
 const faqs = [
   {
     id: 1,
-    question: "What is AgroSkill Hub?",
+    question: "What is Mastaskillz Hub?",
     answer:
-      "AgroSkill Hub is a multilingual platform designed to provide accessible learning content. It aims to bridge knowledge gaps in agriculture and empower individuals with practical skills. Our goal is to make education engaging and relevant for local communities.",
+      "MastaSkillz Hub is a multilingual platform designed to provide accessible learning content. It aims to bridge knowledge gaps in agriculture and empower individuals with practical skills. Our goal is to make education engaging and relevant for local communities.",
   },
   {
     id: 2,
-    question: "How to get started with AgroSkill Hub?",
+    question: "How to get started with MastaSkillz Hub?",
     answer:
       "To get started, simply create an account on our website. Once registered, you can explore various courses and resources tailored to your needs. Don't forget to check out our community features for peer interaction!",
   },
@@ -17,7 +17,7 @@ const faqs = [
     id: 3,
     question: "Is it a multilingual platform?",
     answer:
-      "Yes, AgroSkill Hub supports multiple languages to ensure accessibility for everyone. Our content is translated and localized to meet the needs of diverse communities. This feature helps overcome language barriers and promotes inclusive learning.",
+      "Yes, MastaSkillz Hub supports multiple languages to ensure accessibility for everyone. Our content is translated and localized to meet the needs of diverse communities. This feature helps overcome language barriers and promotes inclusive learning.",
   },
   {
     id: 4,
@@ -49,8 +49,8 @@ export default function FAQ() {
           <div className="flex gap-6 flex-col">
             <h3 className="text-5xl font-bold">FAQs</h3>
             <p className="text-lg">
-              Find answers to your questions about AgroSkill Hub and how to get
-              started.
+              Find answers to your questions about Mastaskillz Hub and how to
+              get started.
             </p>
           </div>
           <button className="w-[453px] h-[51px] max-lg:w-full border-[1px] border-buttonprimary rounded-2xl">

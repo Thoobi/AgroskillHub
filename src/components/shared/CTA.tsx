@@ -7,10 +7,10 @@ const CTA = () => {
         <div className="flex flex-col gap-8 items-start w-[616px] max-lg:w-full">
           <span className="flex flex-col gap-6">
             <h1 className="font-bold text-5xl/[3.5rem]">
-              Join the Agroskill Community
+              Join the MastaSkillz Community
             </h1>
             <p className="text-lg">
-              Join AgroSkill Hub and unlock your potential with localized,
+              Join MastaSkillz Hub and unlock your potential with localized,
               engaging learning experiences tailored for your needs. Sign up
               today to connect with peers and gain practical skills that empower
               your future.
