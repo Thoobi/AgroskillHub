@@ -1,14 +1,21 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
-
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "/assets/logo.svg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
   return (
-    <nav className="bg-primaryblack text-primarywhite flex justify-between items-center py-3 px-16 border-b border-primaryblack font-roboto max-lg:px-5">
-      <div className="w-[200px] max-lg:w-[150px] max-lg:h-[45px] flex items-center">
+    <nav className="bg-primaryblack text-primarywhite flex justify-between items-center py-3 px-16 border-b border-primaryblack font-roboto max-lg:px-5 fixed w-full">
+      <div className="w-[200px] max-lg:w-[150px] max-lg:h-[45px] flex items-center ">
         <Link to="/">
           <img src={logo} alt="" className="w-[full] h-[full]" />
         </Link>
@@ -38,7 +45,7 @@ const Navbar = () => {
           )}
         </button>
         {isOpen && (
-          <div className="absolute top-16 w-full right-0 h-full py-5 bg-primaryblack text-primarywhite">
+          <div className="fixed w-full right-0 h-screen py-10 bg-primaryblack text-primarywhite font-jarkata">
             <ul className="flex flex-col gap-8 items-start px-5 justify-center text-lg">
               <li>Home</li>
               <li>Courses</li>

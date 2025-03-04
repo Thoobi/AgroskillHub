@@ -63,7 +63,7 @@ const Waitlist = () => {
 
   return (
     <section
-      className="max-lg:h-full h-screen bg-black text-white font-jarkata w-full max-lg:px-3 flex justify-center pt-10 max-lg:py-8"
+      className="max-lg:h-full h-screen bg-black text-white font-jarkata w-full max-lg:px-3 flex justify-center  max-lg:py-8 pt-28 max-lg:pt-28"
       style={{
         backgroundImage: `url(${bgClog})`,
         backgroundSize: "cover",

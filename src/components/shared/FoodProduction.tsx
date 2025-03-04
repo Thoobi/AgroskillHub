@@ -1,6 +1,6 @@
 import foodprodshort from "../../foodprodshort.json";
 import { MdOutlinePlayLesson } from "react-icons/md";
-import { RiUserVoiceLine } from "react-icons/ri";
+// import { RiUserVoiceLine } from "react-icons/ri";
 import { IoStar } from "react-icons/io5";
 
 interface FoodProd {
@@ -37,12 +37,14 @@ const FoodProduction = () => {
                   <MdOutlinePlayLesson />
                   <h6 className="text-sm">{item.lessons} lessons</h6>
                 </span>
-                <span className="flex items-center gap-[5px]">
-                  <RiUserVoiceLine className="text-[#2196F3] h-[15px] w-[15px]" />
-                  <h6 className="text-[10px]">{item.students}</h6>
+                <span className="flex gap-2 items-center">
+                  <IoStar />
+                  <h6 className="text-[#1E2B33] text-base font-bold">
+                    {item.rating}
+                  </h6>
                 </span>
               </div>
-              <div className="w-full flex justify-between items-center">
+              {/* <div className="w-full flex justify-between items-center">
                 <span className="text-xl font-bold text-[#1E2B33]">
                   ₦{item.price}
                 </span>
@@ -52,7 +54,7 @@ const FoodProduction = () => {
                     {item.rating}
                   </h6>
                 </span>
-              </div>
+              </div> */}
             </div>
             <div className="w-full px-6">
               <button className="h-11 w-[254px] bg-buttonprimary rounded-2xl text-base font-bold text-white">

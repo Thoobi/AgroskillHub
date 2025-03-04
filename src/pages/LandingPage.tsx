@@ -10,7 +10,7 @@ import WordsTwo from "../components/shared/WordsTwo";
 
 const LandingPages = () => {
   return (
-    <div>
+    <div className="pt-16">
       <Header />
       {/* <Journey /> */}
       <Courses />
