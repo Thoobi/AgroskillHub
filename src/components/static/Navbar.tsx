@@ -1,11 +1,16 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "/assets/logo.svg";
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const handleSignUp = () => {
+    navigate("/signup");
+  };
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -31,7 +36,10 @@ const Navbar = () => {
           <button className="border-[1px] border-buttonprimary h-[43px] w-[85px] text-lg font-medium">
             Login
           </button>
-          <button className="bg-buttonprimary h-[43px] w-[103px] text-lg text-white font-medium">
+          <button
+            className="bg-buttonprimary h-[43px] w-[103px] text-lg text-white font-medium"
+            onClick={handleSignUp}
+          >
             Sign Up
           </button>
         </div>

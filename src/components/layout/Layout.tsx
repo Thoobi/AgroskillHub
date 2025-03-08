@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 const Layout = () => {
   const location = useLocation();
-  const withoutFooter = ["/join-waitlist"];
+  const withoutFooter = ["/join-waitlist", "/signup"];
   return (
     <div>
       <Navbar />
