@@ -65,7 +65,13 @@ const Navbar = () => {
                 </button>
               </li>
               <li className="w-full">
-                <button className="bg-buttonprimary h-[43px] w-full text-lg text-white font-medium">
+                <button
+                  className="bg-buttonprimary h-[43px] w-full text-lg text-white font-medium"
+                  onClick={() => {
+                    handleSignUp();
+                    setIsOpen(false);
+                  }}
+                >
                   Sign Up
                 </button>
               </li>
