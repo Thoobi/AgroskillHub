@@ -4,7 +4,26 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "/assets/logo.svg";
+const navLinks = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Courses",
+    href: "/courses",
+  },
+  {
+    name: "Community Hub",
+    href: "/community",
+  },
+  {
+    name: "About Us",
+    href: "/about",
+  },
+];
 const Navbar = () => {
+  const [activeTab, setActiveTab] = useState("");
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const handleSignUp = () => {
@@ -26,12 +45,20 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex items-center gap-8 text-base max-lg:hidden">
-        <ul className="flex space-x-8">
-          <li>Home</li>
-          <li>Courses</li>
-          <li>Community Hub</li>
-          <li>About Us</li>
-        </ul>
+        {navLinks.map((link, index) => (
+          <Link
+            key={index}
+            to={link.href}
+            onClick={() => setActiveTab(link.name)}
+            className={`${
+              activeTab === link.name
+                ? "text-white border-b-2 hover:border-white"
+                : "text-primarywhite"
+            } hover:border-b-2 hover:border-white`}
+          >
+            {link.name}
+          </Link>
+        ))}
         <div className="flex gap-4">
           <button className="border-[1px] border-buttonprimary h-[43px] w-[85px] text-lg font-medium">
             Login

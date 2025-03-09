@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="px-16 py-20 w-full flex flex-col gap-8 font-jarkata max-lg:px-5 max-lg:py-12">
-      <div className="p-12 border-[1px] border-[#2196F3] bg-black text-white flex gap-32 w-full max-lg:flex-col max-lg:p-5">
+      <div className="p-12 bg-black text-white flex gap-32 w-full max-lg:flex-col max-lg:p-5">
         <div className="flex gap-11 w-full max-lg:flex-col">
           <div className="w-[125px]">
             <Link to={"/"}>
