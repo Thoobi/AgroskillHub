@@ -4,6 +4,7 @@ import LandingPage from "../pages/LandingPage";
 import Waitlist from "../pages/Waitlist";
 import SignUp from "../pages/SignUp";
 import CommunityLanding from "../pages/CommunityLanding";
+import Courses from "../pages/Courses";
 
 export const routes = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const routes = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp />,
+      },
+      {
+        path: "/courses",
+        element: <Courses />,
       },
     ],
   },

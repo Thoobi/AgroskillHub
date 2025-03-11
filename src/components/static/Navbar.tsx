@@ -1,7 +1,7 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "/assets/logo.svg";
 const navLinks = [
@@ -19,11 +19,14 @@ const navLinks = [
   },
   {
     name: "About Us",
-    href: "/about",
+    // href: "/about",
   },
 ];
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState("");
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState(
+    localStorage.getItem("activeTab") || ""
+  );
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const handleSignUp = () => {
@@ -36,7 +39,10 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [isOpen]);
+    window.scrollTo(0, 0);
+    localStorage.setItem("activeTab", location.pathname);
+  }, [isOpen, activeTab, location.pathname]);
+
   return (
     <nav className="bg-primaryblack text-primarywhite flex justify-between items-center py-3 px-16 border-b border-primaryblack font-roboto max-lg:px-5 fixed w-full">
       <div className="w-[200px] max-lg:w-[150px] max-lg:h-[45px] flex items-center ">
@@ -48,10 +54,10 @@ const Navbar = () => {
         {navLinks.map((link, index) => (
           <Link
             key={index}
-            to={link.href}
-            onClick={() => setActiveTab(link.name)}
+            to={link.href ? link.href : ""}
+            onClick={() => setActiveTab(link.href || "")}
             className={`${
-              activeTab === link.name
+              activeTab === link.href
                 ? "text-white border-b-2 hover:border-white"
                 : "text-primarywhite"
             } hover:border-b-2 hover:border-white`}
@@ -82,10 +88,20 @@ const Navbar = () => {
         {isOpen && (
           <div className="fixed w-full right-0 h-screen py-10 bg-primaryblack text-primarywhite font-jarkata">
             <ul className="flex flex-col gap-8 items-start px-5 justify-center text-lg">
-              <li>Home</li>
-              <li>Courses</li>
-              <li>Community Hub</li>
-              <li>About Us</li>
+              {navLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.href ? link.href : ""}
+                  onClick={() => setActiveTab(link.name)}
+                  className={`${
+                    activeTab === link.name
+                      ? "text-white border-b-2 hover:border-white"
+                      : "text-primarywhite"
+                  } hover:border-b-2 hover:border-white`}
+                >
+                  {link.name}
+                </Link>
+              ))}
               <li className="w-full">
                 <button className="border-[1px] border-buttonprimary h-[43px] w-full text-lg font-medium">
                   Login
