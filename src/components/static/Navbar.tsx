@@ -57,7 +57,6 @@ const Navbar = () => {
             to={link.href ? link.href : ""}
             onClick={() => {
               setActiveTab(link.href || "");
-              setIsOpen(false);
             }}
             className={`${
               activeTab === link.href
@@ -95,7 +94,10 @@ const Navbar = () => {
                 <Link
                   key={index}
                   to={link.href ? link.href : ""}
-                  onClick={() => setActiveTab(link.name)}
+                  onClick={() => {
+                    setActiveTab(link.href || "");
+                    setIsOpen(false);
+                  }}
                   className={`${
                     activeTab === link.name
                       ? "text-white border-b-2 hover:border-white"
