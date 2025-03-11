@@ -99,7 +99,7 @@ const Navbar = () => {
                     setIsOpen(false);
                   }}
                   className={`${
-                    activeTab === link.name
+                    activeTab === link.href
                       ? "text-white border-b-2 hover:border-white"
                       : "text-primarywhite"
                   } hover:border-b-2 hover:border-white`}
