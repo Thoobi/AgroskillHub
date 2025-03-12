@@ -45,9 +45,9 @@ const Waitlist = () => {
         },
         body: `Firstname=${formData.Firstname}&Lastname=${formData.Lastname}&Gender=${formData.Gender}&Phonenumber=${formData.Phonenumber}&Email=${formData.Emailaddress}`,
       }).then((res) => {
-        setLoading(false);
         if (res.status === 200) {
           toast.success(`Successfully joined waitlist!`);
+          setLoading(false);
           setFormData({
             Firstname: "",
             Lastname: "",
