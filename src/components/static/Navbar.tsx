@@ -30,7 +30,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const handleSignUp = () => {
-    navigate("/signup");
+    navigate("/join-waitlist");
   };
 
   useEffect(() => {

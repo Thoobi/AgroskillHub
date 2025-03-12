@@ -28,11 +28,8 @@ const Header = () => {
           women alike.
         </p>
         <div className="flex gap-4 max-lg:flex-col">
-          <button className="bg-buttonprimary text-white rounded-[4px] h-[51px] w-[194px] max-lg:h-12 text-lg font-medium">
-            Sign Up
-          </button>
           <button
-            className="border-[1px] border-buttonprimary rounded-[4px] h-[51px] max-lg:h-12 w-[194px] text-lg font-medium"
+            className="bg-buttonprimary rounded-[4px] h-[51px] max-lg:h-12 w-[194px] text-lg font-medium"
             onClick={handleJoinWaitlist}
           >
             Join Waitlist

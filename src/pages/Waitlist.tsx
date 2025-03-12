@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast, Toaster } from "sonner";
 
 const Waitlist = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     Firstname: "",
     Lastname: "",
@@ -22,7 +23,7 @@ const Waitlist = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setLoading(true);
     if (
       !formData.Firstname ||
       !formData.Lastname ||
@@ -44,6 +45,7 @@ const Waitlist = () => {
         },
         body: `Firstname=${formData.Firstname}&Lastname=${formData.Lastname}&Gender=${formData.Gender}&Phonenumber=${formData.Phonenumber}&Email=${formData.Emailaddress}`,
       }).then((res) => {
+        setLoading(false);
         if (res.status === 200) {
           toast.success(`Successfully joined waitlist!`);
           setFormData({
@@ -63,7 +65,7 @@ const Waitlist = () => {
 
   return (
     <section
-      className="max-lg:h-full h-screen bg-black text-white font-jarkata w-full max-lg:px-3 flex justify-center  max-lg:py-8 pt-28 max-lg:pt-28"
+      className="max-lg:h-full h-full py-20 pt-28 bg-black text-white font-jarkata w-full max-lg:px-3 flex justify-center  max-lg:py-8 max-lg:pt-28"
       style={{
         backgroundImage: `url(${bgClog})`,
         backgroundSize: "cover",
@@ -71,6 +73,7 @@ const Waitlist = () => {
     >
       <Toaster
         position="bottom-right"
+        expand={true}
         toastOptions={{
           style: {
             font: "jarkata",
@@ -154,9 +157,10 @@ const Waitlist = () => {
         <div className="flex justify-center">
           <button
             type="submit"
+            disabled={loading}
             className="bg-black/40 w-[250px] h-[47px] hover:bg-black/50 max-lg:bg-black/50"
           >
-            Join Waitlist
+            {loading ? "Loading..." : "Join Waitlist"}
           </button>
         </div>
       </form>
