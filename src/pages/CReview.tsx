@@ -52,6 +52,16 @@ const CReview = () => {
     e.preventDefault();
     console.log(formData);
     console.log("loading....");
+    if (
+      formData.Name === "" ||
+      formData.email === "" ||
+      formData.phoneNumber === "" ||
+      formData.jobTitle === "" ||
+      formData.file === ""
+    ) {
+      toast.error("Please fill all fields");
+      return;
+    }
     // setFormData({
     //   Name: formData.Name,
     //   email: formData.email,
