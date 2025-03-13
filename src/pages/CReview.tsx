@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { MdOutlineAttachFile } from "react-icons/md";
 import { RxMagicWand } from "react-icons/rx";
 import { toast, Toaster } from "sonner";
@@ -32,6 +32,7 @@ const CReview = () => {
   };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
+    console.log(file);
     if (!selectedFile) {
       return;
     }
