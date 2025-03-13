@@ -5,6 +5,8 @@ import Waitlist from "../pages/Waitlist";
 import SignUp from "../pages/SignUp";
 import CommunityLanding from "../pages/CommunityLanding";
 import Courses from "../pages/Courses";
+import Terms from "../pages/Terms";
+import Privacy from "../pages/PrivacyPolicy";
 
 export const routes = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ export const routes = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses />,
+      },
+      {
+        path: "/terms",
+        element: <Terms />,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />,
       },
     ],
   },

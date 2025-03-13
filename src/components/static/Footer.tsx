@@ -20,7 +20,9 @@ const Footer = () => {
             <h4 className="text-base font-semibold">Quick Links</h4>
             <ul>
               <li className="py-2 text-sm">About Us</li>
-              <li className="py-2 text-sm">Contact Us</li>
+              <li className="py-2 text-sm">
+                <Link to={"mailto:mastaskillzhq@gmail.com"}>Contact us</Link>
+              </li>
               <li className="py-2 text-sm">FAQS</li>
               <li className="py-2 text-sm">Blogs</li>
               <li className="py-2 text-sm">Support</li>
@@ -76,8 +78,12 @@ const Footer = () => {
         <div className="flex justify-start w-full gap-6 max-lg:flex-col-reverse">
           <p className="text-sm">© 2021 AgroSkill Hub. All Rights Reserved.</p>
           <ul className="flex gap-6 max-lg:flex-c">
-            <li className="text-sm underline max-lg:w-full">Privacy Policy</li>
-            <li className="text-sm underline">Terms of Service</li>
+            <li className="text-sm underline max-lg:w-full">
+              <Link to={"/privacy"}>Privacy Policy</Link>{" "}
+            </li>
+            <li className="text-sm underline">
+              <Link to={"/terms"}>Terms of Service</Link>
+            </li>
             <li className="text-sm underline">Cookie Settings</li>
           </ul>
         </div>
