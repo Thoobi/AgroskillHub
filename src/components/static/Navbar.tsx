@@ -18,8 +18,8 @@ const navLinks = [
     href: "/community",
   },
   {
-    name: "About Us",
-    // href: "/about",
+    name: "CV Review",
+    href: "/review",
   },
 ];
 const Navbar = () => {

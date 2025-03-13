@@ -7,6 +7,7 @@ import CommunityLanding from "../pages/CommunityLanding";
 import Courses from "../pages/Courses";
 import Terms from "../pages/Terms";
 import Privacy from "../pages/PrivacyPolicy";
+import CReview from "../pages/CReview";
 
 export const routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const routes = createBrowserRouter([
       {
         path: "/privacy",
         element: <Privacy />,
+      },
+      {
+        path: "/review",
+        element: <CReview />,
       },
     ],
   },
