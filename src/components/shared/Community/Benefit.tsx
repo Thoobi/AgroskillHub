@@ -13,28 +13,28 @@ const Benefit = () => {
           <div className="flex flex-col gap-2 justify-start items-start pt-[74px] pb-[40px] pl-[87px] pr-[124px] bg-[#2ED335]/35 rounded-tr-[172px]">
             <h2 className="text-2xl/[30px] font-bold">Networking</h2>
             <p className="text-start">
-              Get access to Job Readiness Events, Networking opportunities with
-              your peers in the alumni community but also with experts in your
-              field of interest, and last, but not the least, Access to Job
-              opportunities.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              id labore iste, molestias minus ratione numquam cupiditate ad rem
+              maxime enim veniam dolor fuga temporibus quidem vel iusto in
+              eveniet!
             </p>
           </div>
           <div className="flex flex-col gap-2 justify-start items-start pt-11 pb-[40px] pl-[94px] pr-[133px] bg-[#EAEFF4]">
             <h2 className="text-2xl font-bold">Earn</h2>
             <p className="text-start">
-              We live in a world where we are constantly required to upskill to
-              stay relevant in our professional paths! With the The Alumni
-              Community you are always presented with the opportunity to hone
-              your soft skills as well as your technical skills.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
+              temporibus ipsa eius ratione necessitatibus minima sequi. Debitis
+              dolore consequatur nobis nulla officiis cumque? Nobis minima quis
+              sequi cumque, placeat eligendi!
             </p>
           </div>
           <div className="w-[586px] flex flex-col gap-2 justify-start items-start pt-[30.25px] pb-[53px] pl-[109px] pr-[108px] bg-[#2ED335]/35 rounded-bl-[172px]">
             <h2 className="text-2xl font-bold">Lifelong Learning</h2>
             <p className="text-start">
-              We live in a world where we are constantly required to upskill to
-              stay relevant in our professional paths! With the The Alumni
-              Community you are always presented with the opportunity to hone
-              your soft skills as well as your technical skills.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis
+              dignissimos adipisci est in quia amet, ullam ipsam eius
+              reprehenderit quaerat laboriosam rem omnis inventore autem
+              blanditiis vitae ipsum? Nihil, ducimus.
             </p>
           </div>
         </div>
@@ -45,10 +45,10 @@ const Benefit = () => {
           <div className="flex flex-col gap-2 justify-start items-start pt-11 pb-[40px] pl-[94px] pr-[133px] bg-[#EAEFF4]">
             <h2 className="text-2xl font-bold">MarketPlace</h2>
             <p className="text-start">
-              We live in a world where we are constantly required to upskill to
-              stay relevant in our professional paths! With the The Alumni
-              Community you are always presented with the opportunity to hone
-              your soft skills as well as your technical skills.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Doloribus rem dolorem eos, sint debitis dolores molestias illum!
+              Quisquam possimus fuga, necessitatibus temporibus quae pariatur
+              ipsum perferendis, accusantium quaerat nihil ut.
             </p>
           </div>
           <div className="">
