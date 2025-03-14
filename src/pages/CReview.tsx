@@ -73,44 +73,33 @@ const CReview = () => {
     //   file: file?.name || "",
     // });
     console.log(formData);
-
+    console.log("Loading....");
     const response = await fetch("https://cv-review.onrender.com/upload", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        mode: "no-cors",
       },
       body: JSON.stringify(formData),
     });
-
+    response.json();
+    console.log(response);
+    console.log(formData);
     if (!response.ok) {
       console.log(response.status);
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
-    // For HTML response
-    const htmlContent = await response.text();
-    console.log("HTML Response:", htmlContent);
-    console.log("loadings....");
-
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlContent, "text/html");
-
-    // Example: Extract specific content from the HTML
-    const message = doc.querySelector(".message")?.textContent;
-    const status = doc.querySelector(".status")?.textContent;
-
-    console.log("Parsed HTML:", {
-      message,
-      status,
-      fullHtml: htmlContent,
-    });
+    const data = await response.json();
+    console.log(data);
+    toast.success("CV uploaded successfully");
   };
 
   return (
     <section className="bg-gray-100 w-full h-full py-20 pt-28 font-jarkata">
       <Toaster richColors expand position="top-right" />
-      <div className="mx-auto px-4 max-w-7xl max-lg:w-full">
+      <div className="mx-auto px-4 max-w-7xl max-lg:w-full flex flex-col gap-2">
         <h1 className="text-5xl font-medium text-center">CV Review</h1>
+        <p className="text-center text-xl">Get instant feedback on your CV</p>
       </div>
       <div className="py-5 flex justify-center items-center max-lg:w-full">
         <form
