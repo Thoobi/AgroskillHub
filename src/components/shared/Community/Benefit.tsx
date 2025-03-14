@@ -2,15 +2,15 @@ import learn from "/assets/learn.svg";
 import smile from "/assets/smile-benefit.svg";
 const Benefit = () => {
   return (
-    <section className="font-roboto text-black flex flex-col px-28 py-24 text-center justify-center gap-24 max-lg:w-full max-lg:px-5">
+    <section className="font-roboto text-black flex flex-col px-28 py-24 text-center justify-center gap-24 max-lg:gap-20 max-lg:w-full max-lg:px-5 max-lg:py-16">
       <div className="w-[667px] max-lg:w-full mx-auto">
-        <h1 className="text-[3.5rem]/[72px] font-bold max-lg:text-3xl">
+        <h1 className="text-[3.5rem]/[72px] font-bold max-lg:text-4xl">
           What are the benefits within Our Community
         </h1>
       </div>
-      <div className="flex gap-2 w-full">
-        <div className="flex flex-col gap-8 justify-start items-start w-[594px]">
-          <div className="flex flex-col gap-2 justify-start items-start pt-[74px] pb-[40px] pl-[87px] pr-[124px] bg-[#2ED335]/35 rounded-tr-[172px]">
+      <div className="flex gap-2 w-full max-lg:flex-col max-lg:gap-10">
+        <div className="flex flex-col gap-8 justify-start items-start w-[594px] max-lg:w-full">
+          <div className="flex flex-col gap-2 justify-start items-start pt-[74px] pb-[40px] pl-[87px] pr-[124px] bg-[#2ED335]/35 rounded-tr-[172px] max-lg:w-full max-lg:px-5 max-lg:rounded-[10px]">
             <h2 className="text-2xl/[30px] font-bold">Networking</h2>
             <p className="text-start">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
@@ -19,7 +19,7 @@ const Benefit = () => {
               eveniet!
             </p>
           </div>
-          <div className="flex flex-col gap-2 justify-start items-start pt-11 pb-[40px] pl-[94px] pr-[133px] bg-[#EAEFF4]">
+          <div className="flex flex-col gap-2 justify-start items-start pt-11 pb-[40px] pl-[94px] pr-[133px] bg-[#EAEFF4] max-lg:w-full max-lg:px-5">
             <h2 className="text-2xl font-bold">Earn</h2>
             <p className="text-start">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
@@ -28,7 +28,7 @@ const Benefit = () => {
               sequi cumque, placeat eligendi!
             </p>
           </div>
-          <div className="w-[586px] flex flex-col gap-2 justify-start items-start pt-[30.25px] pb-[53px] pl-[109px] pr-[108px] bg-[#2ED335]/35 rounded-bl-[172px]">
+          <div className="w-[586px] flex flex-col gap-2 justify-start items-start pt-[30.25px] pb-[53px] pl-[109px] pr-[108px] bg-[#2ED335]/35 rounded-bl-[172px] max-lg:w-full max-lg:px-5 max-lg:rounded-[10px]">
             <h2 className="text-2xl font-bold">Lifelong Learning</h2>
             <p className="text-start">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis
@@ -38,11 +38,11 @@ const Benefit = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-8 w-[594px]">
-          <div className="h-[271px]">
+        <div className="flex flex-col gap-8 w-[594px] max-lg:w-full max-lg:gap-4">
+          <div className="h-[271px] max-lg:h-full">
             <img src={smile} alt="" className="w-full h-full" />
           </div>
-          <div className="flex flex-col gap-2 justify-start items-start pt-11 pb-[40px] pl-[94px] pr-[133px] bg-[#EAEFF4]">
+          <div className="flex flex-col gap-2 justify-start items-start pt-11 pb-[40px] pl-[94px] pr-[133px] bg-[#EAEFF4] max-lg:w-full max-lg:px-5 max-lg:rounded-[10px]">
             <h2 className="text-2xl font-bold">MarketPlace</h2>
             <p className="text-start">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
