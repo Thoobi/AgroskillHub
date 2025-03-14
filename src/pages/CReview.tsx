@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineAttachFile } from "react-icons/md";
 import { RxMagicWand } from "react-icons/rx";
 import { toast, Toaster } from "sonner";
@@ -13,6 +13,9 @@ interface FormData {
 }
 
 const CReview = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [formData, setFormData] = useState<FormData>({
     Name: "",
     email: "",
@@ -106,12 +109,15 @@ const CReview = () => {
   return (
     <section className="bg-gray-100 w-full h-full py-20 pt-28 font-jarkata">
       <Toaster richColors expand position="top-right" />
-      <div className="mx-auto px-4 max-w-7xl">
+      <div className="mx-auto px-4 max-w-7xl max-lg:w-full">
         <h1 className="text-5xl font-medium text-center">CV Review</h1>
-        <p></p>
       </div>
-      <div className="py-5 flex justify-center items-center">
-        <form action="" className="flex flex-col gap-5" onSubmit={handleForm}>
+      <div className="py-5 flex justify-center items-center max-lg:w-full">
+        <form
+          action=""
+          className="flex flex-col gap-5 max-lg:w-full max-lg:px-5"
+          onSubmit={handleForm}
+        >
           <div className="flex flex-col">
             <label htmlFor="Name">Name</label>
             <input
@@ -119,7 +125,7 @@ const CReview = () => {
               name="Name"
               id="Name"
               onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none"
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full max-lg:py-3"
             />
           </div>
           <div className="flex flex-col">
@@ -129,7 +135,7 @@ const CReview = () => {
               name="email"
               id="email"
               onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none"
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full max-lg:py-3"
             />
           </div>
           <div className="flex flex-col">
@@ -139,7 +145,7 @@ const CReview = () => {
               name="phoneNumber"
               id="phoneNumber"
               onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none"
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full max-lg:py-3"
             />
           </div>
           <div className="flex flex-col">
@@ -149,13 +155,13 @@ const CReview = () => {
               name="jobTitle"
               id="jobTitle"
               onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none"
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full max-lg:py-3"
             />
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="">Upload your CV/Resume</label>
-            <div className="py-10 border-gray-300 border rounded-md w-[400px] flex justify-center items-center gap-2">
+            <div className="py-10 border-gray-300 border rounded-md w-[400px] flex justify-center items-center gap-2 max-lg:w-full">
               <input
                 type="file"
                 accept="pdf"
@@ -172,23 +178,25 @@ const CReview = () => {
               </label>
             </div>
           </div>
-          <div className="flex gap-2">
-            <input type="checkbox" />
-            <span>
-              Agree to our{" "}
-              <Link to="/terms" className="text-blue-600 underline">
-                Terms
-              </Link>{" "}
-              and{" "}
-              <Link to={"/privacy"} className="text-blue-600 underline">
-                Privacy Policy
-              </Link>
-            </span>
+          <div className="flex flex-col gap-8 mt-5">
+            <div className="flex gap-2">
+              <input type="checkbox" />
+              <span>
+                Agree to our{" "}
+                <Link to="/terms" className="text-blue-600 underline">
+                  Terms
+                </Link>{" "}
+                and{" "}
+                <Link to={"/privacy"} className="text-blue-600 underline">
+                  Privacy Policy
+                </Link>
+              </span>
+            </div>
+            <button className="bg-green-600 py-3 rounded-lg text-white text-lg hover:bg-green-500">
+              Review
+              <RxMagicWand size={24} className="inline-block ml-2" />
+            </button>
           </div>
-          <button className="bg-green-600 py-3 rounded-lg text-white text-lg hover:bg-green-500">
-            Review
-            <RxMagicWand size={24} className="inline-block ml-2" />
-          </button>
         </form>
       </div>
     </section>
