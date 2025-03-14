@@ -125,7 +125,7 @@ const CReview = () => {
               name="Name"
               id="Name"
               onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full max-lg:py-3"
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full"
             />
           </div>
           <div className="flex flex-col">
@@ -135,7 +135,7 @@ const CReview = () => {
               name="email"
               id="email"
               onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full max-lg:py-3"
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full"
             />
           </div>
           <div className="flex flex-col">
@@ -145,7 +145,7 @@ const CReview = () => {
               name="phoneNumber"
               id="phoneNumber"
               onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full max-lg:py-3"
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full"
             />
           </div>
           <div className="flex flex-col">
@@ -155,7 +155,7 @@ const CReview = () => {
               name="jobTitle"
               id="jobTitle"
               onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full max-lg:py-3"
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full "
             />
           </div>
 
