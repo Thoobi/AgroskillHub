@@ -5,11 +5,9 @@ import { RxMagicWand } from "react-icons/rx";
 import { toast, Toaster } from "sonner";
 
 interface FormData {
-  Name: string;
-  email: string;
-  phoneNumber: string;
+  jobDescription: string;
   jobTitle: string;
-  file: File | string;
+  cv: File | string;
 }
 
 const CReview = () => {
@@ -17,17 +15,16 @@ const CReview = () => {
     window.scrollTo(0, 0);
   }, []);
   const [formData, setFormData] = useState<FormData>({
-    Name: "",
-    email: "",
-    phoneNumber: "",
+    jobDescription: "",
     jobTitle: "",
-    file: "",
+    cv: "",
   });
   const [file, setFile] = useState<File | null>(null);
   const [fileName, setFileName] = useState<string>("");
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.name, e.target.value);
+  const onChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -47,7 +44,7 @@ const CReview = () => {
     console.log(selectedFile);
     setFile(selectedFile);
     setFileName(selectedFile.name);
-    setFormData((data) => ({ ...data, file: selectedFile }));
+    setFormData((data) => ({ ...data, cv: selectedFile }));
     toast.success("File uploaded successfully");
   };
 
@@ -56,22 +53,14 @@ const CReview = () => {
     console.log(formData);
     console.log("loading....");
     if (
-      formData.Name === "" ||
-      formData.email === "" ||
-      formData.phoneNumber === "" ||
       formData.jobTitle === "" ||
-      formData.file === ""
+      formData.cv === "" ||
+      formData.jobDescription === ""
     ) {
       toast.error("Please fill all fields");
       return;
     }
-    // setFormData({
-    //   Name: formData.Name,
-    //   email: formData.email,
-    //   phoneNumber: formData.phoneNumber,
-    //   jobTitle: formData.jobTitle,
-    //   file: file?.name || "",
-    // });
+
     console.log(formData);
     console.log("Loading....");
     const response = await fetch("https://cv-review.onrender.com/upload", {
@@ -95,7 +84,7 @@ const CReview = () => {
   };
 
   return (
-    <section className="bg-gray-100 w-full h-full py-20 pt-28 font-jarkata">
+    <section className="bg-gray-100 w-full h-screen py-20 pt-28 font-jarkata flex flex-col gap-5 justify-center items-center">
       <Toaster richColors expand position="top-right" />
       <div className="mx-auto px-4 max-w-7xl max-lg:w-full flex flex-col gap-2">
         <h1 className="text-5xl font-medium text-center">CV Review</h1>
@@ -108,42 +97,23 @@ const CReview = () => {
           onSubmit={handleForm}
         >
           <div className="flex flex-col">
-            <label htmlFor="Name">Name</label>
-            <input
-              type="text"
-              name="Name"
-              id="Name"
-              onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="phonenumber">Phone Number</label>
-            <input
-              type="text"
-              name="phoneNumber"
-              id="phoneNumber"
-              onChange={onChange}
-              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full"
-            />
-          </div>
-          <div className="flex flex-col">
             <label htmlFor="jobTitle">Job Title</label>
             <input
-              type="text"
               name="jobTitle"
+              type="text"
               id="jobTitle"
               onChange={onChange}
+              className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full "
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="jobDescription">Job Description</label>
+            <textarea
+              name="jobDescription"
+              onChange={onChange}
+              rows={5}
+              cols={5}
+              placeholder="Write a description of the job"
               className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full "
             />
           </div>

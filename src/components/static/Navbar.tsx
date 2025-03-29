@@ -34,6 +34,17 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    const storedActiveTab = localStorage.getItem("activeTab");
+    const currentPath = location.pathname;
+
+    if (storedActiveTab && storedActiveTab !== currentPath) {
+      setActiveTab(currentPath);
+    } else {
+      setActiveTab(currentPath);
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -54,9 +65,9 @@ const Navbar = () => {
         {navLinks.map((link, index) => (
           <Link
             key={index}
-            to={link.href ? link.href : ""}
+            to={link.href}
             onClick={() => {
-              setActiveTab(link.href || "");
+              setActiveTab(link.href);
             }}
             className={`${
               activeTab === link.href
@@ -68,11 +79,11 @@ const Navbar = () => {
           </Link>
         ))}
         <div className="flex gap-4">
-          <button className="border-[1px] border-buttonprimary h-[43px] w-[85px] text-lg font-medium">
+          <button className="border-[1px] border-green-700 h-[43px] w-[85px] text-lg font-medium">
             Login
           </button>
           <button
-            className="bg-buttonprimary h-[43px] w-[103px] text-lg text-white font-medium"
+            className="bg-green-700 h-[43px] w-[103px] text-lg text-white font-medium"
             onClick={handleSignUp}
           >
             Sign Up

@@ -44,20 +44,9 @@ const FoodProduction = () => {
                   </h6>
                 </span>
               </div>
-              {/* <div className="w-full flex justify-between items-center">
-                <span className="text-xl font-bold text-[#1E2B33]">
-                  ₦{item.price}
-                </span>
-                <span className="flex gap-2 items-center">
-                  <IoStar />
-                  <h6 className="text-[#1E2B33] text-xl font-bold">
-                    {item.rating}
-                  </h6>
-                </span>
-              </div> */}
             </div>
             <div className="w-full px-6">
-              <button className="h-11 w-[254px] bg-buttonprimary rounded-2xl text-base font-bold text-white">
+              <button className="h-11 w-[254px] bg-green-700 rounded-2xl text-base font-bold text-white">
                 Enroll Now
               </button>
             </div>
