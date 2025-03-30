@@ -8,8 +8,8 @@ const Eligibility = () => {
       <div className="flex flex-col gap-4 max-lg:gap-5 justify-center items-start">
         <h3 className="text-4xl/[36.4px] font-bold">Eligibility</h3>
         <p className="text-lg/[27px] w-[370px] max-lg:w-full">
-          The Alumni Community is reserved for ALX graduates. As part of this
-          elite tier, you gain access to expanded career support.
+          The Alumni Community is reserved for Mastakillz graduates. As part of
+          this elite tier, you gain access to expanded career support.
         </p>
         <button className="w-[194px] text-white h-[51px] bg-buttonprimary rounded-[4px]">
           Join Us Today
