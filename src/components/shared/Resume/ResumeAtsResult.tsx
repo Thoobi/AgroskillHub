@@ -3,15 +3,15 @@ import { MdCheckCircle, MdError } from "react-icons/md";
 
 const ResumeAtsResult = () => {
   const {
-    complexFormatting,
-    contactInfo,
-    fileFormat,
-    standardHeaders,
+    // complexFormatting,
+    // contactInfo,
+    // fileFormat,
+    // standardHeaders,
     matchKeywords,
     matchPercentage,
     missingKeywords,
     recomendations,
-    keywords,
+    // keywords,
   } = useResume();
 
   const StatusIndicator = ({ condition }: { condition: boolean }) =>
