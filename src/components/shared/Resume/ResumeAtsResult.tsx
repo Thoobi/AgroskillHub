@@ -2,17 +2,8 @@ import { useResume } from "../../../hooks/useResume";
 import { MdCheckCircle, MdError } from "react-icons/md";
 
 const ResumeAtsResult = () => {
-  const {
-    // complexFormatting,
-    // contactInfo,
-    // fileFormat,
-    // standardHeaders,
-    matchKeywords,
-    matchPercentage,
-    missingKeywords,
-    recomendations,
-    // keywords,
-  } = useResume();
+  const { matchKeywords, matchPercentage, missingKeywords, recomendations } =
+    useResume();
 
   const StatusIndicator = ({ condition }: { condition: boolean }) =>
     condition ? (
