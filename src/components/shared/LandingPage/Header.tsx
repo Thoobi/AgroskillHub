@@ -22,10 +22,9 @@ const Header = () => {
           </h1>
         </div>
         <p className="text-xl w-[560px] max-lg:w-full font-normal max-lg:text-base">
-          Mastaskillz Hub bridges knowledge gaps by providing engaging,
-          multilingual educational content tailored for your community. Join us
-          in transforming agriculture into a thriving career path for youth and
-          women alike.
+          Mastaskillz Hub is a skill-building platform that provides localized,
+          practical learning to help individuals gain job-ready skills and
+          unlock new opportunities.
         </p>
         <div className="flex gap-4 max-lg:flex-col">
           <button

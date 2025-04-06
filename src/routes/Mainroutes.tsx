@@ -8,10 +8,15 @@ import Courses from "../pages/Courses";
 import Terms from "../pages/Terms";
 import Privacy from "../pages/PrivacyPolicy";
 import CReview from "../pages/CReview";
+import { ResumeProvider } from "../context/resumeContext";
 
 export const routes = createBrowserRouter([
   {
-    element: <Layout />,
+    element: (
+      <ResumeProvider>
+        <Layout />
+      </ResumeProvider>
+    ),
     children: [
       {
         path: "/",
