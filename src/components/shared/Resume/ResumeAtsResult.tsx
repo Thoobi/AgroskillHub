@@ -98,7 +98,6 @@ const ResumeAtsResult = () => {
         </div>
       </div>
 
-      {/* Recommendations */}
       <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm">
         <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">
           Recommendations
