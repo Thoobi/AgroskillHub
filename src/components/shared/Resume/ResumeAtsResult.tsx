@@ -1,7 +1,57 @@
 import { useResume } from "../../../hooks/useResume";
 import { MdCheckCircle, MdError } from "react-icons/md";
+import { useEffect } from "react";
+import "../../../App.css";
+import { toast } from "sonner";
 
 const ResumeAtsResult = () => {
+  useEffect(() => {
+    // Prevent right click
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+
+    // Prevent keyboard shortcuts
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        // Prevent print (Ctrl+P or Cmd+P)
+        ((e.ctrlKey || e.metaKey) && e.key === "p") ||
+        // Prevent save (Ctrl+S or Cmd+S)
+        ((e.ctrlKey || e.metaKey) && e.key === "s") ||
+        // Prevent screenshot
+        ((e.ctrlKey || e.metaKey) && e.key === "PrintScreen") ||
+        // Prevent inspect (Ctrl+Shift+I or Cmd+Shift+I or Cmd+Option+I)
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === "i") ||
+        // Prevent source view (Ctrl+U or Cmd+U)
+        ((e.ctrlKey || e.metaKey) && e.key === "u") ||
+        // Prevent developer tools (Cmd+Option+J/I)
+        (e.metaKey && e.altKey && (e.key === "j" || e.key === "i"))
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    };
+
+    document.addEventListener("contextmenu", handleContextMenu);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleCopy = (e: ClipboardEvent) => {
+      e.preventDefault();
+      toast.error("Copying content is not allowed");
+    };
+
+    document.addEventListener("copy", handleCopy);
+    return () => document.removeEventListener("copy", handleCopy);
+  }, []);
+
   const { matchKeywords, matchPercentage, missingKeywords, recomendations } =
     useResume();
 
@@ -13,7 +63,7 @@ const ResumeAtsResult = () => {
     );
 
   return (
-    <section className="w-full h-full font-jarkata flex flex-col px-4 md:px-14 py-4 md:py-5 gap-4 md:gap-8">
+    <section className="w-full h-full font-jarkata flex flex-col px-4 md:px-14 py-4 md:py-5 gap-4 md:gap-8 prevent-download">
       {/* Score Card */}
       <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm">
         <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">

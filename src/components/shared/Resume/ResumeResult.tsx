@@ -1,5 +1,6 @@
 import { useResume } from "../../../hooks/useResume";
 import { MdTrendingUp, MdTrendingDown } from "react-icons/md";
+import { useEffect } from "react";
 
 const formatSuggestion = (suggestion: string) => {
   const titleMatch = suggestion.match(/\*\*(.*?)\*\*/);
@@ -91,10 +92,47 @@ const ResumeResult = () => {
       <span
         className={`px-3 py-1.5 rounded-full text-sm font-medium border ${styles[type]}`}
       >
-        {keyword}
+        {keyword ? keyword : "There are no missing keywords"}
       </span>
     );
   };
+
+  useEffect(() => {
+    // Prevent right click
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+
+    // Prevent keyboard shortcuts
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        // Prevent print (Ctrl+P or Cmd+P)
+        ((e.ctrlKey || e.metaKey) && e.key === "p") ||
+        // Prevent save (Ctrl+S or Cmd+S)
+        ((e.ctrlKey || e.metaKey) && e.key === "s") ||
+        // Prevent screenshot
+        ((e.ctrlKey || e.metaKey) && e.key === "PrintScreen") ||
+        // Prevent inspect (Ctrl+Shift+I or Cmd+Shift+I or Cmd+Option+I)
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === "i") ||
+        // Prevent source view (Ctrl+U or Cmd+U)
+        ((e.ctrlKey || e.metaKey) && e.key === "u") ||
+        // Prevent developer tools (Cmd+Option+J/I)
+        (e.metaKey && e.altKey && (e.key === "j" || e.key === "i"))
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    };
+
+    document.addEventListener("contextmenu", handleContextMenu);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-6 md:py-8">
