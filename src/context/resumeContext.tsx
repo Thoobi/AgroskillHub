@@ -291,21 +291,70 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, []);
 
-  const handleClear = () => {
-    localStorage.removeItem("reviewData");
-    setDataInserted(false);
-    setImprovementSuggestions([]);
-    setMissingKeywords([]);
-    setPresentKeywords([]);
-    setAtsCompatibility(0);
-    setMissingSkills([]);
-    setSkillsMatch([]);
-    setOverallScore(0);
-    setAtsCompatibilityOriginal(0);
-    setOverallScoreOriginal(0);
-    setSummary("");
-    setCvData([]);
-    setClear(true);
+  // const handleClear = () => {
+  //   localStorage.removeItem("reviewData");
+  //   setDataInserted(false);
+  //   setImprovementSuggestions([]);
+  //   setMissingKeywords([]);
+  //   setPresentKeywords([]);
+  //   setAtsCompatibility(0);
+  //   setMissingSkills([]);
+  //   setSkillsMatch([]);
+  //   setOverallScore(0);
+  //   setAtsCompatibilityOriginal(0);
+  //   setOverallScoreOriginal(0);
+  //   setSummary("");
+  //   setCvData([]);
+  //   setClear(true);
+  // };
+
+  const handleClear = async () => {
+    // Ask for confirmation
+    const confirmClear = window.confirm(
+      "Are you sure you want to clear your resume analysis?"
+    );
+
+    if (confirmClear) {
+      try {
+        // First clear localStorage
+        localStorage.removeItem("reviewData");
+        localStorage.removeItem("atsData");
+
+        // Reset all states in specific order
+        setDataInserted(false);
+        setClear(true);
+
+        // Reset all data states
+        setImprovementSuggestions([]);
+        setMissingKeywords([]);
+        setPresentKeywords([]);
+        setAtsCompatibility(0);
+        setMissingSkills([]);
+        setSkillsMatch([]);
+        setOverallScore(0);
+        setAtsCompatibilityOriginal(0);
+        setOverallScoreOriginal(0);
+        setSummary("");
+        setCvData([]);
+
+        // Reset form data
+        setFormData({
+          jobDescription: "",
+          jobTitle: "",
+          cv: "",
+        });
+        setFile(null);
+        setFileName("");
+
+        // Navigate to form page
+        // navigate("/resume-review");
+
+        toast.success("Analysis cleared successfully");
+      } catch (error) {
+        console.error("Error clearing data:", error);
+        toast.error("Error clearing analysis");
+      }
+    }
   };
 
   return (

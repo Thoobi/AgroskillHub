@@ -16,7 +16,7 @@ interface FoodProd {
 
 const FoodProduction = () => {
   return (
-    <div className="flex flex-row max-lg:flex-col gap-6 w-full max-lg:px-5">
+    <div className="flex flex-row max-lg:flex-col gap-6 w-full max-lg:px-5 h-full">
       {foodprodshort.map((item: FoodProd) => (
         <div
           key={item.id}
@@ -29,7 +29,7 @@ const FoodProduction = () => {
               className="w-full h-full rounded-t-2xl"
             />
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col justify-between">
             <div className="w-full px-6 py-4 font-jarkata flex flex-col gap-6">
               <h1 className="text-2xl font-semibold">{item.title}</h1>
               <div className="flex items-center justify-between">
