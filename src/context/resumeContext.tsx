@@ -76,7 +76,8 @@ interface ResumeContextType {
   missingAtsKeywords: string[];
   recomendations: string[];
   matchPercentage: number;
-  atsData: [];
+  loadCvData: [];
+  setLoadCvData: React.Dispatch<React.SetStateAction<[]>>;
 }
 
 type ResumeNavType = ResumeNavItem[];
@@ -135,7 +136,7 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
   const [recomendations, setRecommendations] = useState<string[]>([""]);
   const [matchPercentage, setMatchPercentage] = useState<number>(0);
   const [keywords, setKeywords] = useState<[]>([]);
-  const [atsData, setAtsData] = useState<[]>([]);
+  const [loadCvData, setLoadCvData] = useState<[]>([]);
 
   const onChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -194,6 +195,7 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
       if (response.status === 200 && response.data) {
         // Set all the relevant data from response
         const analysisResults = response.data.analysis_results.ai_analysis;
+        const atsAnalysisResults = response.data.analysis_results.ats_analysis;
         setData(response.data);
         setImprovementSuggestions(
           analysisResults.improvement_suggestions || []
@@ -214,6 +216,24 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
         setOverallScoreOriginal(analysisResults.overall_score_original || 0);
         setSummary(analysisResults.summary || "");
         setCvData(analysisResults || []);
+        setLoadCvData(atsAnalysisResults || []);
+        setComplexFormatting(
+          atsAnalysisResults?.flags?.complex_formatting || []
+        );
+        setContactInfo(atsAnalysisResults?.flags?.contact_info || false);
+        setFileFormat(atsAnalysisResults?.flags?.file_format || "");
+        setMatchPercentage(
+          atsAnalysisResults?.keyword_analysis?.match_percentage || 0
+        );
+        setStandardHeaders(atsAnalysisResults?.flags?.standard_headings || []);
+        setMatchKeywords(
+          atsAnalysisResults?.keyword_analysis?.matched_keywords || []
+        );
+        setMissingAtsKeywords(
+          atsAnalysisResults?.keyword_analysis?.missing_keywords || []
+        );
+        setRecommendations(atsAnalysisResults?.recommendations || []);
+        setKeywords(atsAnalysisResults?.keywords || []);
         localStorage.setItem(
           "reviewData",
           JSON.stringify(response.data.analysis_results.ai_analysis)
@@ -248,113 +268,98 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const storedData = localStorage.getItem("reviewData");
-    if (storedData) {
-      try {
-        const parsedData = JSON.parse(storedData);
-        // Set all the states from stored data
-        setImprovementSuggestions(parsedData.improvement_suggestions);
-        setMissingKeywords(parsedData.keyword_analysis.missing_keywords);
-        setPresentKeywords(parsedData.keyword_analysis.present_keywords);
-        setAtsCompatibility(parsedData.ats_compatibility);
-        setMissingSkills(parsedData.missing_skills);
-        setSkillsMatch(parsedData.skills_match);
-        setOverallScore(parsedData.overall_score);
-        setAtsCompatibilityOriginal(parsedData.ats_compatibility_original);
-        setOverallScoreOriginal(parsedData.overall_score_original);
-        setSummary(parsedData.summary);
-        setCvData(parsedData);
-        setDataInserted(true);
-        setClear(false);
-      } catch (error) {
-        console.error("Error parsing stored data:", error);
-        handleClear();
-      }
-    }
-  }, []);
-
-  useEffect(() => {
     const atsData = localStorage.getItem("atsData");
-    if (atsData) {
-      const parsedData = JSON.parse(atsData);
-      setAtsData(parsedData);
-      setComplexFormatting(parsedData?.flags?.complex_formatting ?? []);
-      setContactInfo(parsedData.flags?.contact_info);
-      setFileFormat(parsedData.flags?.file_format);
-      setMatchPercentage(parsedData?.keyword_analysis?.match_percentage);
-      setStandardHeaders(parsedData?.flags?.standard_headings);
-      setMatchKeywords(parsedData?.keyword_analysis?.matched_keywords ?? []);
-      setMissingAtsKeywords(
-        parsedData?.keyword_analysis?.missing_keywords ?? []
+
+    if (!storedData || !atsData) {
+      handleClear();
+      return;
+    }
+
+    try {
+      const parsedData = JSON.parse(storedData);
+      const parsedAtsData = JSON.parse(atsData);
+
+      // Debug the parsed data
+      console.log("Parsed Data:", {
+        parsedData,
+        parsedAtsData,
+      });
+
+      // Set AI Analysis data
+      setImprovementSuggestions(parsedData.improvement_suggestions || []);
+      setMissingKeywords(
+        parsedData.keyword_analysis?.missing ||
+          parsedData.keyword_analysis?.missing_keywords ||
+          []
       );
-      setRecommendations(parsedData?.recommendations);
-      setKeywords(parsedData?.flags?.keywords);
+      setPresentKeywords(
+        parsedData.keyword_analysis?.present ||
+          parsedData.keyword_analysis?.present_keywords ||
+          []
+      );
+      setAtsCompatibility(parsedData.ats_compatibility || 0);
+      setMissingSkills(parsedData.missing_skills || []);
+      setSkillsMatch(parsedData.skills_match || []);
+      setOverallScore(parsedData.overall_score || 0);
+      setAtsCompatibilityOriginal(parsedData.ats_compatibility_original || 0);
+      setOverallScoreOriginal(parsedData.overall_score_original || 0);
+      setSummary(parsedData.summary || "");
+
+      // Set ATS Analysis data
+      setLoadCvData(parsedAtsData || []);
+      setComplexFormatting(parsedAtsData?.flags?.complex_formatting || []);
+      setContactInfo(parsedAtsData?.flags?.contact_info || false);
+      setFileFormat(parsedAtsData?.flags?.file_format || "");
+      setMatchPercentage(
+        parsedAtsData?.keyword_analysis?.match_percentage || 0
+      );
+      setStandardHeaders(parsedAtsData?.flags?.standard_headings || []);
+      setMatchKeywords(parsedAtsData?.keyword_analysis?.matched_keywords || []);
+      setMissingAtsKeywords(
+        parsedAtsData?.keyword_analysis?.missing_keywords || []
+      );
+      setRecommendations(parsedAtsData?.recommendations || []);
+      setKeywords(parsedAtsData?.keywords || []);
+
+      setCvData(parsedData);
+      setDataInserted(true);
+      setClear(false);
+    } catch (error) {
+      console.error("Error parsing stored data:", error);
+      console.log("Stored Data:", storedData);
+      console.log("ATS Data:", atsData);
+      handleClear();
     }
   }, []);
 
-  // const handleClear = () => {
-  //   localStorage.removeItem("reviewData");
-  //   setDataInserted(false);
-  //   setImprovementSuggestions([]);
-  //   setMissingKeywords([]);
-  //   setPresentKeywords([]);
-  //   setAtsCompatibility(0);
-  //   setMissingSkills([]);
-  //   setSkillsMatch([]);
-  //   setOverallScore(0);
-  //   setAtsCompatibilityOriginal(0);
-  //   setOverallScoreOriginal(0);
-  //   setSummary("");
-  //   setCvData([]);
-  //   setClear(true);
-  // };
-
-  const handleClear = async () => {
-    // Ask for confirmation
-    const confirmClear = window.confirm(
-      "Are you sure you want to clear your resume analysis?"
-    );
-
-    if (confirmClear) {
-      try {
-        // First clear localStorage
-        localStorage.removeItem("reviewData");
-        localStorage.removeItem("atsData");
-
-        // Reset all states in specific order
-        setDataInserted(false);
-        setClear(true);
-
-        // Reset all data states
-        setImprovementSuggestions([]);
-        setMissingKeywords([]);
-        setPresentKeywords([]);
-        setAtsCompatibility(0);
-        setMissingSkills([]);
-        setSkillsMatch([]);
-        setOverallScore(0);
-        setAtsCompatibilityOriginal(0);
-        setOverallScoreOriginal(0);
-        setSummary("");
-        setCvData([]);
-
-        // Reset form data
-        setFormData({
-          jobDescription: "",
-          jobTitle: "",
-          cv: "",
-        });
-        setFile(null);
-        setFileName("");
-
-        // Navigate to form page
-        // navigate("/resume-review");
-
-        toast.success("Analysis cleared successfully");
-      } catch (error) {
-        console.error("Error clearing data:", error);
-        toast.error("Error clearing analysis");
-      }
-    }
+  const handleClear = () => {
+    localStorage.removeItem("reviewData");
+    localStorage.removeItem("atsData");
+    setDataInserted(false);
+    setImprovementSuggestions([]);
+    setMissingKeywords([]);
+    setPresentKeywords([]);
+    setAtsCompatibility(0);
+    setMissingSkills([]);
+    setSkillsMatch([]);
+    setOverallScore(0);
+    setAtsCompatibilityOriginal(0);
+    setOverallScoreOriginal(0);
+    setSummary("");
+    setCvData([]);
+    setClear(true);
+    setComplexFormatting([]);
+    setContactInfo([]);
+    setFileFormat([]);
+    setMatchPercentage(0);
+    setStandardHeaders([]);
+    setMatchKeywords([]);
+    setMissingAtsKeywords([]);
+    setRecommendations([]);
+    setKeywords([]);
+    setData([]);
+    setFile(null);
+    setLoadCvData([]);
   };
 
   return (
@@ -409,7 +414,8 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
         setClear,
         setData,
         data,
-        atsData,
+        loadCvData,
+        setLoadCvData,
         complexFormatting,
         contactInfo,
         fileFormat,

@@ -31,6 +31,10 @@ const ResumeResult = () => {
     atsCompatibilityOriginal,
   } = useResume();
 
+  console.log("missingKeywords", missingKeywords);
+  console.log("matchingSkills", skillsMatch);
+  console.log("presentKeywords", presentKeywords);
+
   const ScoreCard = ({
     title,
     score,
@@ -108,8 +112,6 @@ const ResumeResult = () => {
       if (
         // Prevent print (Ctrl+P or Cmd+P)
         ((e.ctrlKey || e.metaKey) && e.key === "p") ||
-        // Prevent save (Ctrl+S or Cmd+S)
-        ((e.ctrlKey || e.metaKey) && e.key === "s") ||
         // Prevent screenshot
         ((e.ctrlKey || e.metaKey) && e.key === "PrintScreen") ||
         // Prevent inspect (Ctrl+Shift+I or Cmd+Shift+I or Cmd+Option+I)

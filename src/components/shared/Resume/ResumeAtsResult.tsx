@@ -1,59 +1,64 @@
 import { useResume } from "../../../hooks/useResume";
 import { MdCheckCircle, MdError } from "react-icons/md";
-import { useEffect } from "react";
+import { useEffect, useMemo, useCallback } from "react";
 import "../../../App.css";
 import { toast } from "sonner";
 
 const ResumeAtsResult = () => {
-  useEffect(() => {
-    // Prevent right click
-    const handleContextMenu = (e: MouseEvent) => {
+  const {
+    matchKeywords,
+    matchPercentage,
+    missingAtsKeywords,
+    missingKeywords,
+    recomendations,
+    loadCvData,
+  } = useResume();
+
+  console.log("loadCvData", loadCvData);
+  console.log("missingKeywords", missingAtsKeywords);
+  console.log("matchKeywords", matchKeywords);
+
+  // Memoize handlers to prevent unnecessary re-renders
+  const handleContextMenu = useCallback((e: MouseEvent) => {
+    e.preventDefault();
+  }, []);
+
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (
+      ((e.ctrlKey || e.metaKey) && e.key === "p") ||
+      ((e.ctrlKey || e.metaKey) && e.key === "PrintScreen") ||
+      ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === "i") ||
+      ((e.ctrlKey || e.metaKey) && e.key === "u") ||
+      (e.metaKey && e.altKey && (e.key === "j" || e.key === "i"))
+    ) {
       e.preventDefault();
-    };
+      e.stopPropagation();
+    }
+  }, []);
 
-    // Prevent keyboard shortcuts
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (
-        // Prevent print (Ctrl+P or Cmd+P)
-        ((e.ctrlKey || e.metaKey) && e.key === "p") ||
-        // Prevent save (Ctrl+S or Cmd+S)
-        ((e.ctrlKey || e.metaKey) && e.key === "s") ||
-        // Prevent screenshot
-        ((e.ctrlKey || e.metaKey) && e.key === "PrintScreen") ||
-        // Prevent inspect (Ctrl+Shift+I or Cmd+Shift+I or Cmd+Option+I)
-        ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === "i") ||
-        // Prevent source view (Ctrl+U or Cmd+U)
-        ((e.ctrlKey || e.metaKey) && e.key === "u") ||
-        // Prevent developer tools (Cmd+Option+J/I)
-        (e.metaKey && e.altKey && (e.key === "j" || e.key === "i"))
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      }
-    };
+  const handleCopy = useCallback((e: ClipboardEvent) => {
+    e.preventDefault();
+    toast.error("Copying content is not allowed");
+  }, []);
 
+  // Memoize the score color class
+  const scoreColorClass = useMemo(() => {
+    if (matchPercentage >= 70) return "text-green-500";
+    if (matchPercentage >= 50) return "text-yellow-500";
+    return "text-red-500";
+  }, [matchPercentage]);
+
+  useEffect(() => {
     document.addEventListener("contextmenu", handleContextMenu);
     document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("copy", handleCopy);
 
     return () => {
       document.removeEventListener("contextmenu", handleContextMenu);
       document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("copy", handleCopy);
     };
-  }, []);
-
-  useEffect(() => {
-    const handleCopy = (e: ClipboardEvent) => {
-      e.preventDefault();
-      toast.error("Copying content is not allowed");
-    };
-
-    document.addEventListener("copy", handleCopy);
-    return () => document.removeEventListener("copy", handleCopy);
-  }, []);
-
-  const { matchKeywords, matchPercentage, missingKeywords, recomendations } =
-    useResume();
+  }, [handleContextMenu, handleKeyDown, handleCopy]);
 
   const StatusIndicator = ({ condition }: { condition: boolean }) =>
     condition ? (
@@ -70,15 +75,7 @@ const ResumeAtsResult = () => {
           Resume Overall Score
         </h2>
         <div className="flex items-center gap-3 md:gap-4">
-          <div
-            className={`text-4xl md:text-6xl font-bold ${
-              matchPercentage >= 70
-                ? "text-green-500"
-                : matchPercentage >= 50
-                ? "text-yellow-500"
-                : "text-red-500"
-            }`}
-          >
+          <div className={`text-4xl md:text-6xl font-bold ${scoreColorClass}`}>
             {matchPercentage}%
           </div>
           <p className="text-sm md:text-base text-gray-600">
