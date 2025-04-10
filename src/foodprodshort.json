@@ -11,32 +11,32 @@
   },
   {
     "id": 2,
-    "title": "Introduction to Potato Farming Techniques",
-    "description": "This course is designed to introduce you to the world of agricultural economics. You will learn about the principles of economics, the role of agriculture in the economy, and the factors that affect the agricultural industry.",
+    "title": "Introduction to BlockChain Development",
+    "description": "This is an introduction to the world of blockchain development. You will learn about the different types of blockchain, the role of blockchain in the economy, and the tools and technologies used in blockchain development.",
     "price": 15000,
     "lessons": 45,
     "students": 30,
     "rating": 4.7,
-    "image": "/assets/potato.jpg"
+    "image": "/assets/blockchain.png"
   },
   {
     "id": 3,
-    "title": "Essential Techniques and Basics for Leafy Vegetable Cultivation",
-    "description": "This course is designed to introduce you to the world of agricultural engineering. You will learn about the different types of agricultural engineering, the role of agricultural engineers, and the tools and technologies used in the field.",
+    "title": "Essential Techniques and Basics for LinkedIn Optimization",
+    "description": "This course is designed to introduce you to the world of LinkedIn optimization. You will learn about the principles of LinkedIn optimization, the role of LinkedIn in the economy, and the strategies used to optimize your LinkedIn profile.",
     "price": 20000,
     "lessons": 60,
     "students": 30,
     "rating": 4.9,
-    "image": "/assets/leafy.jpg"
+    "image": "/assets/linkedin.png"
   },
   {
     "id": 4,
-    "title": "Cucumber Farming: A Beginner's Guide to Growing Cucumbers ",
-    "description": "This course is designed to introduce you to the world of agricultural marketing. You will learn about the principles of marketing, the role of marketing in the agricultural industry, and the strategies used to promote agricultural products.",
+    "title": "Introduction to CV / Resume Writing",
+    "description": "This course is designed to introduce you to the world of CV and resume writing. You will learn about the principles of CV and resume writing, the role of CV and resume in the economy, and the strategies used to write a CV and resume.",
     "price": 25000,
     "lessons": 75,
     "students": 30,
     "rating": 4.8,
-    "image": "/assets/cucumber.jpg"
+    "image": "/assets/resume.png"
   }
 ]
