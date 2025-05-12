@@ -8,7 +8,13 @@ import Courses from "../pages/Courses";
 import Terms from "../pages/Terms";
 import Privacy from "../pages/PrivacyPolicy";
 import CReview from "../pages/CReview";
+import AuthLayout from "../components/layout/AuthLayout";
 import { ResumeProvider } from "../context/resumeContext";
+import { AuthProvider } from "../context/AuthContext";
+import AuthVerification from "../pages/AuthVerification";
+import Login from "../pages/Login";
+import PasswordReset from "../pages/PasswordReset";
+import PasswordResetVerify from "../pages/PasswordResetVerify";
 
 export const routes = createBrowserRouter([
   {
@@ -26,18 +32,12 @@ export const routes = createBrowserRouter([
         path: "/join-waitlist",
         element: <Waitlist />,
       },
-      {
-        path: "/signup",
-        element: <SignUp />,
-      },
+
       {
         path: "/community",
         element: <CommunityLanding />,
       },
-      {
-        path: "/signup",
-        element: <SignUp />,
-      },
+
       {
         path: "/courses",
         element: <Courses />,
@@ -53,6 +53,39 @@ export const routes = createBrowserRouter([
       {
         path: "/review",
         element: <CReview />,
+      },
+    ],
+  },
+  {
+    element: (
+      <AuthProvider>
+        <AuthLayout />
+      </AuthProvider>
+    ),
+    children: [
+      {
+        path: "auth/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "auth/login",
+        element: <Login />,
+      },
+      {
+        path: "auth/activation/",
+        element: <AuthVerification />,
+      },
+      {
+        path: "reset-password",
+        element: <PasswordReset />,
+      },
+      {
+        path: "password-update/",
+        element: <PasswordReset />,
+      },
+      {
+        path: "auth/reset-password/",
+        element: <PasswordResetVerify />,
       },
     ],
   },

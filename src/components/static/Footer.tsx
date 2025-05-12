@@ -76,7 +76,7 @@ const Footer = () => {
       </div>
       <div className="flex w-full justify-between max-lg:flex-col-reverse max-lg:gap-6">
         <div className="flex justify-start w-full gap-6 max-lg:flex-col-reverse">
-          <p className="text-sm">© 2021 AgroSkill Hub. All Rights Reserved.</p>
+          <p className="text-sm">© 2025 Mastaskillz. All Rights Reserved.</p>
           <ul className="flex gap-6 max-lg:flex-c">
             <li className="text-sm underline max-lg:w-full">
               <Link to={"/privacy"}>Privacy Policy</Link>{" "}

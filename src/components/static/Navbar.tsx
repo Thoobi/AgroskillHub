@@ -29,8 +29,13 @@ const Navbar = () => {
   );
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleLogin = () => {
+    navigate("auth/login");
+  };
+
   const handleSignUp = () => {
-    navigate("/join-waitlist");
+    navigate("auth/signup");
   };
 
   useEffect(() => {
@@ -79,7 +84,10 @@ const Navbar = () => {
           </Link>
         ))}
         <div className="flex gap-4">
-          <button className="border-[1px] border-green-700 h-[43px] w-[85px] text-lg font-medium">
+          <button
+            className="border-[1px] border-green-700 h-[43px] w-[85px] text-lg font-medium"
+            onClick={handleLogin}
+          >
             Login
           </button>
           <button

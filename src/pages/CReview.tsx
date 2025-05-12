@@ -69,7 +69,7 @@ const CReview = () => {
                   rows={5}
                   cols={5}
                   placeholder="Write a description of the job"
-                  className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full "
+                  className="py-2 px-3 border border-gray-300 rounded-md w-[400px] outline-none max-lg:w-full resize-none"
                 />
               </div>
 
