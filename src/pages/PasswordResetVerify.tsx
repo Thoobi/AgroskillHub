@@ -85,7 +85,7 @@ export default function PasswordResetVerify() {
               Password Reset
             </h2>
             <p className="text-base text-center max-lg:text-sm font-medium">
-              Please enter your new password
+              Please enter your new password.
             </p>
           </div>
           <div className="w-[450px] h-[47px] p-2 text-black border-2 border-black bg-transparent focus:outline-none rounded-md max-lg:w-full flex flex-row justify-between items-center">

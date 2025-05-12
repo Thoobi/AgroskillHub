@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const handleJoinWaitlist = () => {
-    navigate("/join-waitlist");
+    navigate("/auth/signup");
   };
 
   return (
@@ -31,7 +31,7 @@ const Header = () => {
             className="bg-buttonprimary rounded-[4px] h-[51px] max-lg:h-12 w-[194px] text-lg font-medium"
             onClick={handleJoinWaitlist}
           >
-            Join Waitlist
+            Join Us
           </button>
         </div>
       </div>
