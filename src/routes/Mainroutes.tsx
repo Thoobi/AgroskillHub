@@ -15,11 +15,13 @@ import AuthVerification from "../pages/AuthVerification";
 import Login from "../pages/Login";
 import PasswordReset from "../pages/PasswordReset";
 import PasswordResetVerify from "../pages/PasswordResetVerify";
+import { Analytics } from "@vercel/analytics/next";
 
 export const routes = createBrowserRouter([
   {
     element: (
       <ResumeProvider>
+        <Analytics />
         <Layout />
       </ResumeProvider>
     ),
@@ -59,6 +61,7 @@ export const routes = createBrowserRouter([
   {
     element: (
       <AuthProvider>
+        <Analytics />
         <AuthLayout />
       </AuthProvider>
     ),
