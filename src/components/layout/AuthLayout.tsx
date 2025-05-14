@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 export default function AuthLayout() {
   return (
@@ -14,7 +14,10 @@ export default function AuthLayout() {
       >
         <span className="flex flex-col items-start justify-start p-5 w-full h-full bg-black/10 text-white rounded-2xl max-md:hidden"></span>
       </div>
-      <div className=" w-1/2 h-full justify-center items-center flex flex-col gap-5 rounded-lg p-5 max-lg:w-full max-lg:p-0">
+      <div className="w-1/2 h-full justify-center items-center flex flex-col gap-10 rounded-lg p-5 max-lg:w-full max-lg:p-0 max-lg:py-5 max-lg:gap-5">
+        <Link to={"/"} className="h-20 w-20 max-lg:h-10 max-lg:w-10">
+          <img src={"/MASTASKILLZ.svg"} alt="the icon logo for the project" />
+        </Link>
         <Outlet />
       </div>
     </section>

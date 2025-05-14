@@ -31,6 +31,11 @@ const SignUp = () => {
     console.log(formData);
     console.log("Signing up...");
     await handleSignUp(formData.name, formData.email, formData.password);
+    setFormData({
+      name: "",
+      email: "",
+      password: "",
+    });
   };
 
   return (
@@ -53,9 +58,9 @@ const SignUp = () => {
           Signup
         </h2>
         <p className="text-lg text-center max-lg:text-base font-medium">
-          Please fill the form below to get started.💐
+          Please fill the form below to get started.
         </p>
-        <div className="py-5 flex flex-col gap-5 justify-center items-center max-lg:w-full">
+        <div className="py-5 flex flex-col max-lg:py-2 gap-5 justify-center items-center max-lg:w-full">
           <div className="flex flex-col gap-2 max-lg:w-full">
             <label htmlFor="name">Name</label>
             <input
@@ -64,7 +69,7 @@ const SignUp = () => {
               placeholder="Enter your full name"
               value={formData.name}
               onChange={handleInputChange("name")}
-              className="w-[450px] h-[47px] p-2 text-[#f2f2e6] border-2 border-black bg-transparent focus:outline-none rounded-md max-lg:w-full"
+              className="w-[450px] h-[47px] p-2 text-black border-2 border-black bg-transparent focus:outline-none rounded-md max-lg:w-full"
             />
           </div>
           <div className="flex flex-col gap-2 max-lg:w-full">
