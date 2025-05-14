@@ -1,4 +1,5 @@
 import wip from "/assets/chillguy.png";
+
 const Courses = () => {
   return (
     <section className="max-lg:px-5 h-full w-full bg-primarywhite px-16 py-20 max-lg:py-10 flex justify-center items-center font-jarkata">

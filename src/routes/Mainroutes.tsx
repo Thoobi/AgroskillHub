@@ -15,7 +15,7 @@ import AuthVerification from "../pages/AuthVerification";
 import Login from "../pages/Login";
 import PasswordReset from "../pages/PasswordReset";
 import PasswordResetVerify from "../pages/PasswordResetVerify";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 export const routes = createBrowserRouter([
   {
