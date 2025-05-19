@@ -41,7 +41,7 @@ export default function Login() {
   };
 
   return (
-    <section className="font-jarkata max-lg:flex max-lg:justify-center max-lg:py-0">
+    <section className="md:px-20 md:w-full font-jarkata max-lg:flex max-lg:justify-center max-lg:py-0">
       <Toaster
         position="top-right"
         toastOptions={{
@@ -56,10 +56,10 @@ export default function Login() {
         className="flex flex-col gap-4 py-5 w-full h-full rounded-[20px] max-lg:w-full p-8 max-lg:p-2 max-lg:py-2"
         onSubmit={handleClick}
       >
-        <h2 className="text-6xl font-jarkata font-bold text-center max-lg:text-5xl">
+        <h2 className="text-5xl font-jarkata font-bold text-center max-lg:text-4xl">
           Login
         </h2>
-        <p className="text-lg text-center max-lg:text-base font-medium">
+        <p className="text-base text-center max-lg:text-sm texts-gray-500 font-medium">
           Please fill the form with your credentials to continue
         </p>
         <div className="py-5 flex flex-col gap-5 justify-center items-center max-lg:w-full">

@@ -60,7 +60,7 @@ export default function PasswordResetVerify() {
   };
 
   return (
-    <section>
+    <section className="md:px-20 max-lg:w-full max-lg:flex max-lg:justify-center max-lg:py-0">
       <Toaster
         position="top-right"
         toastOptions={{

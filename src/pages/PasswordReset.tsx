@@ -18,7 +18,7 @@ export default function PasswordReset() {
   };
 
   return (
-    <section className="max-lg:flex max-lg:justify-center max-lg:items-center text-black font-jarkata max-lg:px-1 flex justify-center max-lg:py-1 ">
+    <section className="md:px-20 max-lg:w-full max-lg:flex max-lg:justify-center max-lg:items-center text-black font-jarkata max-lg:px-1 flex justify-center max-lg:py-1 ">
       <Toaster
         position="top-right"
         toastOptions={{
@@ -34,10 +34,10 @@ export default function PasswordReset() {
         onSubmit={handleClick}
       >
         <div className="flex flex-col gap-2 justify-center items-center">
-          <h2 className="text-6xl font-jarkata font-bold text-center max-lg:text-5xl">
+          <h2 className="text-5xl font-jarkata font-bold text-center max-lg:text-4xl">
             Forgot Password?
           </h2>
-          <p className="text-lg text-center max-lg:text-base font-medium">
+          <p className="text-base text-center max-lg:text-sm font-medium">
             Please enter your email to reset your password.
           </p>
         </div>

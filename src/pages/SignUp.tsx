@@ -39,7 +39,7 @@ const SignUp = () => {
   };
 
   return (
-    <section className="max-lg:h-full text-black font-jarkata max-lg:px-1 flex justify-center max-lg:py-8 max-lg:pt-5">
+    <section className="max-lg:w-full md:px-20 text-black font-jarkata max-lg:flex max-lg:justify-center max-lg:py-0">
       <Toaster
         position="top-right"
         toastOptions={{
@@ -51,13 +51,13 @@ const SignUp = () => {
         richColors={true}
       />
       <form
-        className="flex flex-col gap-4 py-5 max-lg:py-2 w-full h-full rounded-[20px] max-lg:w-full p-8 max-lg:p-0 max-lg:h-full"
+        className="flex flex-col gap-4 py-5 w-full h-full rounded-[20px] max-lg:w-full p-8 max-lg:p-2 max-lg:py-2"
         onSubmit={handleClick}
       >
-        <h2 className="text-6xl font-jarkata font-bold text-center max-lg:text-5xl">
+        <h2 className="text-5xl font-jarkata font-bold text-center max-lg:text-4xl">
           Signup
         </h2>
-        <p className="text-lg text-center max-lg:text-base font-medium">
+        <p className="text-base text-gray-500 text-center max-lg:text-sm font-medium">
           Please fill the form below to get started.
         </p>
         <div className="py-5 flex flex-col max-lg:py-2 gap-5 justify-center items-center max-lg:w-full">

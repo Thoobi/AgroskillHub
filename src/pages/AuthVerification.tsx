@@ -61,7 +61,7 @@ export default function AuthVerification() {
   }, [activation_token]);
 
   return (
-    <section className="flex flex-col gap-5 items-center justify-center h-full">
+    <section className="md:px-20 max-lg:w-full flex flex-col gap-5 items-center justify-center h-full">
       <Toaster
         position="top-right"
         toastOptions={{
